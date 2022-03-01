@@ -1463,7 +1463,7 @@ class XLNetForQuestionAnswering(XLNetPreTrainedModel):
                 # Predict answerability from the representation of CLS and START
                 cls_logits = self.answer_class(hidden_states, start_positions=start_positions, cls_index=cls_index)
                 loss_fct_cls = nn.BCEWithLogitsLoss()
-                cls_loss = loss_fct_cls(cls_logits, is_impossibles)
+                cls_loss = loss_fct_cls(cls_logits, is_impossibles.float())
 
                 # note(zhiliny): by default multiply the loss by 0.5 so that the scale is comparable to start_loss and end_loss
                 total_loss += cls_loss * 0.5

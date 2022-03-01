@@ -2,3 +2,8 @@
 *.xml
 *.iml
 *.pyc
+transformer-mrc/reader_cached*
+transformer-mrc/runs
+transformer-mrc/apex
+transformer-mrc/squad
+transformer-mrc/data

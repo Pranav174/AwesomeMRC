@@ -603,7 +603,7 @@ class SQuADProcessor(DataProcessor):
                 for qa in paragraph["qas"]:
                     qas_id = qa["id"]
                     question_text = qa["question"]
-                    is_impossible = qa["is_impossible"]
+                    is_impossible = qa["is_impossible"] if "is_impossible" in qa else False
                     if is_impossible:
                         label = "1"
                     else:

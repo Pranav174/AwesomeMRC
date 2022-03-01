@@ -1,13 +1,12 @@
 #sketchy module
 export DATA_DIR=data
 export TASK_NAME=squad
-python ./examples/run_cls.py \
-    --model_type albert \
-    --model_name_or_path albert-xxlarge-v2 \
+python -m examples.run_cls \
+    --model_type xlnet \
+    --model_name_or_path xlnet-base-cased \
     --task_name $TASK_NAME \
     --do_train \
     --do_eval \
-    --do_lower_case \
     --data_dir $DATA_DIR \
     --max_seq_length 512 \
     --per_gpu_train_batch_size=6   \
@@ -16,6 +15,6 @@ python ./examples/run_cls.py \
     --learning_rate 2e-5 \
     --num_train_epochs 2.0 \
     --eval_all_checkpoints \
-    --output_dir squad/cls_squad2_albert-xxlarge-v2_lr2e-5_len512_bs48_ep2_wm814_fp16 \
+    --output_dir squad/cls_xlnet_cased \
     --save_steps 2500 \
     --fp16
