@@ -1,5 +1,5 @@
 #sketchy module
-export DATA_DIR=/home/azureuser/group_17_global_group_Manupatra_MRC
+export DATA_DIR=./group_17_global_group_Manupatra_MRC
 export TASK_NAME=squad
 python -m examples.run_cls \
     --model_type xlnet \

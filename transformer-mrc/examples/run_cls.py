@@ -17,6 +17,14 @@
 
 from __future__ import absolute_import, division, print_function
 
+print(__package__)
+print(__name__)
+from os import sys, path
+PARENT_DIR = path.dirname(path.dirname(path.abspath(__file__)))
+sys.path.append(PARENT_DIR)
+print(PARENT_DIR)
+# from subpackage1.moduleX import *
+
 import argparse
 import glob
 import logging
@@ -37,7 +45,7 @@ except:
 
 from tqdm import tqdm, trange
 
-from transformers import (WEIGHTS_NAME, BertConfig,
+from transformers_mrc import (WEIGHTS_NAME, BertConfig,
                                   BertForSequenceClassification, BertTokenizer,
                                   RobertaConfig,
                                   RobertaForSequenceClassification,
@@ -57,12 +65,12 @@ from transformers import (WEIGHTS_NAME, BertConfig,
                                   XLMRobertaTokenizer,
                                 )
 
-from transformers import AdamW, get_linear_schedule_with_warmup
+from transformers_mrc import AdamW, get_linear_schedule_with_warmup
 
-from transformers import glue_compute_metrics as compute_metrics
-from transformers import glue_output_modes as output_modes
-from transformers import glue_processors as processors
-from transformers import glue_convert_examples_to_features as convert_examples_to_features
+from transformers_mrc import glue_compute_metrics as compute_metrics
+from transformers_mrc import glue_output_modes as output_modes
+from transformers_mrc import glue_processors as processors
+from transformers_mrc import glue_convert_examples_to_features as convert_examples_to_features
 import sys
 import csv
 csv.field_size_limit(sys.maxsize)
@@ -480,6 +488,7 @@ def main():
         device = torch.device("cuda", args.local_rank)
         torch.distributed.init_process_group(backend='nccl')
         args.n_gpu = 1
+    print(args.n_gpu)
     args.device = device
 
     # Setup logging
