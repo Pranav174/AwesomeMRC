@@ -21,7 +21,7 @@ from __future__ import print_function
 import argparse
 import torch
 
-from transformers import T5Config, T5Model, load_tf_weights_in_t5
+from transformers_mrc import T5Config, T5Model, load_tf_weights_in_t5
 
 import logging
 logging.basicConfig(level=logging.INFO)

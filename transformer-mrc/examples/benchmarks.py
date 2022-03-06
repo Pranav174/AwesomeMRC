@@ -20,20 +20,20 @@
 
 from typing import List
 import timeit
-from transformers import is_tf_available, is_torch_available
+from transformers_mrc import is_tf_available, is_torch_available
 from time import time
 import argparse
 import csv
 
 if is_tf_available():
     import tensorflow as tf
-    from transformers import TFAutoModel
+    from transformers_mrc import TFAutoModel
 
 if is_torch_available():
     import torch
-    from transformers import AutoModel
+    from transformers_mrc import AutoModel
 
-from transformers import AutoConfig, AutoTokenizer
+from transformers_mrc import AutoConfig, AutoTokenizer
 
 input_text = """Bent over their instruments, three hundred Fertilizers were plunged, as 
 the Director of Hatcheries and Conditioning entered the room, in the 

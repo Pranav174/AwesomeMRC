@@ -28,7 +28,7 @@ import uuid
 import unittest
 import logging
 
-from transformers import is_torch_available
+from transformers_mrc import is_torch_available
 
 from .utils import require_torch, slow, torch_device
 
@@ -36,7 +36,7 @@ if is_torch_available():
     import torch
     import numpy as np
 
-    from transformers import (AdaptiveEmbedding, PretrainedConfig, PreTrainedModel,
+    from transformers_mrc import (AdaptiveEmbedding, PretrainedConfig, PreTrainedModel,
                                     BertModel, BertConfig, BERT_PRETRAINED_MODEL_ARCHIVE_MAP,
                                     GPT2LMHeadModel, GPT2Config, GPT2_PRETRAINED_MODEL_ARCHIVE_MAP)
 

@@ -19,8 +19,8 @@ from __future__ import print_function
 import unittest
 import six
 
-from transformers import PreTrainedTokenizer
-from transformers.tokenization_gpt2 import GPT2Tokenizer
+from transformers_mrc import PreTrainedTokenizer
+from transformers_mrc.tokenization_gpt2 import GPT2Tokenizer
 
 from .utils import slow
 

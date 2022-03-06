@@ -13,9 +13,9 @@ except (ImportError, AttributeError):
     Body = lambda *x, **y: None
     _serve_dependancies_installed = False
 
-from transformers import Pipeline
-from transformers.commands import BaseTransformersCLICommand
-from transformers.pipelines import SUPPORTED_TASKS, pipeline
+from transformers_mrc import Pipeline
+from transformers_mrc.commands import BaseTransformersCLICommand
+from transformers_mrc.pipelines import SUPPORTED_TASKS, pipeline
 
 logger = logging.getLogger('transformers-cli/serving')
 

@@ -18,7 +18,7 @@ import os
 import unittest
 import json
 
-from transformers.tokenization_xlm import XLMTokenizer, VOCAB_FILES_NAMES
+from transformers_mrc.tokenization_xlm import XLMTokenizer, VOCAB_FILES_NAMES
 
 from .tokenization_tests_commons import CommonTestCases
 from .utils import slow

@@ -22,11 +22,11 @@ from .modeling_tf_common_test import (TFCommonTestCases, ids_tensor)
 from .configuration_common_test import ConfigTester
 from .utils import require_tf, slow
 
-from transformers import DistilBertConfig, is_tf_available
+from transformers_mrc import DistilBertConfig, is_tf_available
 
 if is_tf_available():
     import tensorflow as tf
-    from transformers.modeling_tf_distilbert import (TFDistilBertModel,
+    from transformers_mrc.modeling_tf_distilbert import (TFDistilBertModel,
                                                              TFDistilBertForMaskedLM,
                                                              TFDistilBertForQuestionAnswering,
                                                              TFDistilBertForSequenceClassification)

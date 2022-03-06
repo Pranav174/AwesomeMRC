@@ -18,7 +18,7 @@ import os
 import json
 import unittest
 
-from transformers.modelcard import ModelCard
+from transformers_mrc.modelcard import ModelCard
 from .tokenization_tests_commons import TemporaryDirectory
 
 class ModelCardTester(unittest.TestCase):

@@ -27,7 +27,7 @@ import csv
 import glob
 import tqdm
 from typing import List
-from transformers import PreTrainedTokenizer
+from transformers_mrc import PreTrainedTokenizer
 
 
 logger = logging.getLogger(__name__)

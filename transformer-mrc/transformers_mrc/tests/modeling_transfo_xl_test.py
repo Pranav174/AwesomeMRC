@@ -20,12 +20,12 @@ import unittest
 import random
 import shutil
 
-from transformers import is_torch_available
+from transformers_mrc import is_torch_available
 
 if is_torch_available():
     import torch
-    from transformers import (TransfoXLConfig, TransfoXLModel, TransfoXLLMHeadModel)
-    from transformers.modeling_transfo_xl import TRANSFO_XL_PRETRAINED_MODEL_ARCHIVE_MAP
+    from transformers_mrc import (TransfoXLConfig, TransfoXLModel, TransfoXLLMHeadModel)
+    from transformers_mrc.modeling_transfo_xl import TRANSFO_XL_PRETRAINED_MODEL_ARCHIVE_MAP
 
 from .modeling_common_test import (CommonTestCases, ids_tensor)
 from .configuration_common_test import ConfigTester

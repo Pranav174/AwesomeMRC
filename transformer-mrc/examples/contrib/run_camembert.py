@@ -4,8 +4,8 @@ import urllib.request
 
 import torch
 
-from transformers.tokenization_camembert import CamembertTokenizer
-from transformers.modeling_camembert import CamembertForMaskedLM
+from transformers_mrc.tokenization_camembert import CamembertTokenizer
+from transformers_mrc.modeling_camembert import CamembertForMaskedLM
 
 
 def fill_mask(masked_input, model, tokenizer, topk=5):

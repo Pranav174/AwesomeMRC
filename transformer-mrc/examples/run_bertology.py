@@ -32,16 +32,16 @@ from torch.utils.data import DataLoader, SequentialSampler, TensorDataset, Subse
 from torch.utils.data.distributed import DistributedSampler
 from torch.nn import CrossEntropyLoss, MSELoss
 
-from transformers import (WEIGHTS_NAME,
+from transformers_mrc import (WEIGHTS_NAME,
                                   BertConfig, BertForSequenceClassification, BertTokenizer,
                                   XLMConfig, XLMForSequenceClassification, XLMTokenizer,
                                   XLNetConfig, XLNetForSequenceClassification, XLNetTokenizer)
 
 from run_glue import set_seed, load_and_cache_examples, ALL_MODELS, MODEL_CLASSES
 
-from transformers import glue_compute_metrics as compute_metrics
-from transformers import glue_output_modes as output_modes
-from transformers import glue_processors as processors
+from transformers_mrc import glue_compute_metrics as compute_metrics
+from transformers_mrc import glue_output_modes as output_modes
+from transformers_mrc import glue_processors as processors
 
 logger = logging.getLogger(__name__)
 

@@ -37,7 +37,7 @@ T5_PRETRAINED_CONFIG_ARCHIVE_MAP = {
 
 class T5Config(PretrainedConfig):
     r"""
-        :class:`~transformers.T5Config` is the configuration class to store the configuration of a
+        :class:`~transformers_mrc.T5Config` is the configuration class to store the configuration of a
         `T5Model`.
 
 

@@ -22,14 +22,14 @@ import json
 import random
 import shutil
 
-from transformers import is_torch_available
+from transformers_mrc import is_torch_available
 
 if is_torch_available():
     import torch
 
-    from transformers import (XLNetConfig, XLNetModel, XLNetLMHeadModel, XLNetForSequenceClassification,
+    from transformers_mrc import (XLNetConfig, XLNetModel, XLNetLMHeadModel, XLNetForSequenceClassification,
                               XLNetForTokenClassification, XLNetForQuestionAnswering)
-    from transformers.modeling_xlnet import XLNET_PRETRAINED_MODEL_ARCHIVE_MAP
+    from transformers_mrc.modeling_xlnet import XLNET_PRETRAINED_MODEL_ARCHIVE_MAP
 
 from .modeling_common_test import (CommonTestCases, ids_tensor)
 from .configuration_common_test import ConfigTester

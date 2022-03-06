@@ -19,13 +19,13 @@ from __future__ import print_function
 import unittest
 import shutil
 
-from transformers import is_torch_available
+from transformers_mrc import is_torch_available
 
 if is_torch_available():
     import torch
-    from transformers import (RobertaConfig, RobertaModel, RobertaForMaskedLM,
+    from transformers_mrc import (RobertaConfig, RobertaModel, RobertaForMaskedLM,
                               RobertaForSequenceClassification, RobertaForTokenClassification)
-    from transformers.modeling_roberta import ROBERTA_PRETRAINED_MODEL_ARCHIVE_MAP
+    from transformers_mrc.modeling_roberta import ROBERTA_PRETRAINED_MODEL_ARCHIVE_MAP
 
 from .modeling_common_test import (CommonTestCases, ids_tensor)
 from .configuration_common_test import ConfigTester

@@ -88,8 +88,8 @@ def squad_convert_examples_to_features(
     It is model-dependant and takes advantage of many of the tokenizer's features to create the model's inputs.
 
     Args:
-        examples: list of :class:`~transformers.data.processors.squad.SquadExample`
-        tokenizer: an instance of a child of :class:`~transformers.PreTrainedTokenizer`
+        examples: list of :class:`~transformers_mrc.data.processors.squad.SquadExample`
+        tokenizer: an instance of a child of :class:`~transformers_mrc.PreTrainedTokenizer`
         max_seq_length: The maximum sequence length of the inputs.
         doc_stride: The stride used when the context is too large and is split across several features.
         max_query_length: The maximum length of the query.
@@ -99,7 +99,7 @@ def squad_convert_examples_to_features(
             if 'tf': returns a tf.data.Dataset
 
     Returns:
-        list of :class:`~transformers.data.processors.squad.SquadFeatures`
+        list of :class:`~transformers_mrc.data.processors.squad.SquadFeatures`
 
     Example::
 
@@ -450,7 +450,7 @@ class SquadProcessor(DataProcessor):
 
     def get_examples_from_dataset(self, dataset, evaluate=False):
         """
-        Creates a list of :class:`~transformers.data.processors.squad.SquadExample` using a TFDS dataset.
+        Creates a list of :class:`~transformers_mrc.data.processors.squad.SquadExample` using a TFDS dataset.
 
         Args:
             dataset: The tfds dataset loaded from `tensorflow_datasets.load("squad")`
@@ -644,8 +644,8 @@ class SquadExample(object):
 class SquadFeatures(object):
     """
     Single squad example features to be fed to a model.
-    Those features are model-specific and can be crafted from :class:`~transformers.data.processors.squad.SquadExample`
-    using the :method:`~transformers.data.processors.squad.squad_convert_examples_to_features` method.
+    Those features are model-specific and can be crafted from :class:`~transformers_mrc.data.processors.squad.SquadExample`
+    using the :method:`~transformers_mrc.data.processors.squad.squad_convert_examples_to_features` method.
 
     Args:
         input_ids: Indices of input sequence tokens in the vocabulary.

@@ -19,7 +19,7 @@ import json
 import unittest
 from io import open
 
-from transformers.tokenization_roberta import RobertaTokenizer, VOCAB_FILES_NAMES
+from transformers_mrc.tokenization_roberta import RobertaTokenizer, VOCAB_FILES_NAMES
 from .tokenization_tests_commons import CommonTestCases
 from .utils import slow
 

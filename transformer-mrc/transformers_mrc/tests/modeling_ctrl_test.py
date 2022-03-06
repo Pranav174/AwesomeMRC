@@ -19,10 +19,10 @@ import unittest
 import shutil
 import pdb
 
-from transformers import is_torch_available
+from transformers_mrc import is_torch_available
 
 if is_torch_available():
-    from transformers import (CTRLConfig, CTRLModel, CTRL_PRETRAINED_MODEL_ARCHIVE_MAP,
+    from transformers_mrc import (CTRLConfig, CTRLModel, CTRL_PRETRAINED_MODEL_ARCHIVE_MAP,
                                     CTRLLMHeadModel)
 
 from .modeling_common_test import (CommonTestCases, ids_tensor)

@@ -30,7 +30,7 @@ from typing import Union, Optional, Tuple, List, Dict
 
 import numpy as np
 
-from transformers import (AutoConfig, AutoTokenizer, PreTrainedTokenizer,
+from transformers_mrc import (AutoConfig, AutoTokenizer, PreTrainedTokenizer,
                           PretrainedConfig, ModelCard, SquadExample,
                           squad_convert_examples_to_features, is_tf_available,
                           is_torch_available, BasicTokenizer,
@@ -38,12 +38,12 @@ from transformers import (AutoConfig, AutoTokenizer, PreTrainedTokenizer,
 
 if is_tf_available():
     import tensorflow as tf
-    from transformers import TFAutoModel, TFAutoModelForSequenceClassification, \
+    from transformers_mrc import TFAutoModel, TFAutoModelForSequenceClassification, \
         TFAutoModelForQuestionAnswering, TFAutoModelForTokenClassification
 
 if is_torch_available():
     import torch
-    from transformers import AutoModel, AutoModelForSequenceClassification, \
+    from transformers_mrc import AutoModel, AutoModelForSequenceClassification, \
         AutoModelForQuestionAnswering, AutoModelForTokenClassification
 
 

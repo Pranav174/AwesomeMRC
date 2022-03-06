@@ -19,10 +19,10 @@ from __future__ import print_function
 import unittest
 import shutil
 
-from transformers import is_torch_available
+from transformers_mrc import is_torch_available
 
 if is_torch_available():
-    from transformers import (OpenAIGPTConfig, OpenAIGPTModel, OPENAI_GPT_PRETRAINED_MODEL_ARCHIVE_MAP,
+    from transformers_mrc import (OpenAIGPTConfig, OpenAIGPTModel, OPENAI_GPT_PRETRAINED_MODEL_ARCHIVE_MAP,
                                     OpenAIGPTLMHeadModel, OpenAIGPTDoubleHeadsModel)
 
 from .modeling_common_test import (CommonTestCases, ids_tensor)

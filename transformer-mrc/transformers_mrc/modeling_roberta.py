@@ -105,9 +105,9 @@ ROBERTA_START_DOCSTRING = r"""    The RoBERTa model was proposed in
     .. _`torch.nn.Module`:
         https://pytorch.org/docs/stable/nn.html#module
     Parameters:
-        config (:class:`~transformers.RobertaConfig`): Model configuration class with all the parameters of the
+        config (:class:`~transformers_mrc.RobertaConfig`): Model configuration class with all the parameters of the
             model. Initializing with a config file does not load the weights associated with the model, only the configuration.
-            Check out the :meth:`~transformers.PreTrainedModel.from_pretrained` method to load the model weights.
+            Check out the :meth:`~transformers_mrc.PreTrainedModel.from_pretrained` method to load the model weights.
 """
 
 ROBERTA_INPUTS_DOCSTRING = r"""
@@ -123,8 +123,8 @@ ROBERTA_INPUTS_DOCSTRING = r"""
             the ``add_special_tokens`` parameter set to ``True``.
             RoBERTa is a model with absolute position embeddings so it's usually advised to pad the inputs on
             the right rather than the left.
-            See :func:`transformers.PreTrainedTokenizer.encode` and
-            :func:`transformers.PreTrainedTokenizer.convert_tokens_to_ids` for details.
+            See :func:`transformers_mrc.PreTrainedTokenizer.encode` and
+            :func:`transformers_mrc.PreTrainedTokenizer.convert_tokens_to_ids` for details.
         **attention_mask**: (`optional`) ``torch.FloatTensor`` of shape ``(batch_size, sequence_length)``:
             Mask to avoid performing attention on padding token indices.
             Mask values selected in ``[0, 1]``:
@@ -396,9 +396,9 @@ class RobertaForMultipleChoice(BertPreTrainedModel):
             (b) For single sequences:
                 ``tokens:         [CLS] the dog is hairy . [SEP]``
                 ``token_type_ids:   0   0   0   0  0     0   0``
-            Indices can be obtained using :class:`transformers.BertTokenizer`.
-            See :func:`transformers.PreTrainedTokenizer.encode` and
-            :func:`transformers.PreTrainedTokenizer.convert_tokens_to_ids` for details.
+            Indices can be obtained using :class:`transformers_mrc.BertTokenizer`.
+            See :func:`transformers_mrc.PreTrainedTokenizer.encode` and
+            :func:`transformers_mrc.PreTrainedTokenizer.convert_tokens_to_ids` for details.
         **token_type_ids**: (`optional`) ``torch.LongTensor`` of shape ``(batch_size, num_choices, sequence_length)``:
             Segment token indices to indicate first and second portions of the inputs.
             The second dimension of the input (`num_choices`) indicates the number of choices to score.

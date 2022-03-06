@@ -2,8 +2,8 @@ import os
 from argparse import ArgumentParser, Namespace
 from logging import getLogger
 
-from transformers.commands import BaseTransformersCLICommand
-from transformers import (is_tf_available, is_torch_available,
+from transformers_mrc.commands import BaseTransformersCLICommand
+from transformers_mrc import (is_tf_available, is_torch_available,
                           TextClassificationPipeline,
                           SingleSentenceClassificationProcessor as Processor)
 

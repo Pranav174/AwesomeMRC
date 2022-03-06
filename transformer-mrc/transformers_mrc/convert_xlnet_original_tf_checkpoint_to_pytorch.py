@@ -22,7 +22,7 @@ import os
 import argparse
 import torch
 
-from transformers import (CONFIG_NAME, WEIGHTS_NAME,
+from transformers_mrc import (CONFIG_NAME, WEIGHTS_NAME,
                                                     XLNetConfig,
                                                     XLNetLMHeadModel, XLNetForQuestionAnswering,
                                                     XLNetForSequenceClassification,

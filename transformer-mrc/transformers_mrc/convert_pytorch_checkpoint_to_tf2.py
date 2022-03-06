@@ -22,9 +22,9 @@ import os
 import argparse
 import tensorflow as tf
 
-from transformers import is_torch_available, cached_path
+from transformers_mrc import is_torch_available, cached_path
 
-from transformers import (load_pytorch_checkpoint_in_tf2_model,
+from transformers_mrc import (load_pytorch_checkpoint_in_tf2_model,
     BertConfig, TFBertForPreTraining, TFBertForQuestionAnswering, TFBertForSequenceClassification, BERT_PRETRAINED_CONFIG_ARCHIVE_MAP,
                                   GPT2Config, TFGPT2LMHeadModel, GPT2_PRETRAINED_CONFIG_ARCHIVE_MAP,
                                   XLNetConfig, TFXLNetLMHeadModel, XLNET_PRETRAINED_CONFIG_ARCHIVE_MAP,
@@ -40,7 +40,7 @@ from transformers import (load_pytorch_checkpoint_in_tf2_model,
 if is_torch_available():
     import torch
     import numpy as np
-    from transformers import (BertForPreTraining, BertForQuestionAnswering, BertForSequenceClassification, BERT_PRETRAINED_MODEL_ARCHIVE_MAP,
+    from transformers_mrc import (BertForPreTraining, BertForQuestionAnswering, BertForSequenceClassification, BERT_PRETRAINED_MODEL_ARCHIVE_MAP,
                                       GPT2LMHeadModel, GPT2_PRETRAINED_MODEL_ARCHIVE_MAP,
                                       XLNetLMHeadModel, XLNET_PRETRAINED_MODEL_ARCHIVE_MAP,
                                       XLMWithLMHeadModel, XLM_PRETRAINED_MODEL_ARCHIVE_MAP,

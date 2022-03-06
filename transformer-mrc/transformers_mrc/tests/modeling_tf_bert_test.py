@@ -24,11 +24,11 @@ from .modeling_tf_common_test import (TFCommonTestCases, ids_tensor)
 from .configuration_common_test import ConfigTester
 from .utils import require_tf, slow
 
-from transformers import BertConfig, is_tf_available
+from transformers_mrc import BertConfig, is_tf_available
 
 if is_tf_available():
     import tensorflow as tf
-    from transformers.modeling_tf_bert import (TFBertModel, TFBertForMaskedLM,
+    from transformers_mrc.modeling_tf_bert import (TFBertModel, TFBertForMaskedLM,
                                                        TFBertForNextSentencePrediction,
                                                        TFBertForPreTraining,
                                                        TFBertForSequenceClassification,

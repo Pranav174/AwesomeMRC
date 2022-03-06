@@ -550,9 +550,9 @@ T5_START_DOCSTRING = r"""    The T5 model was proposed in
             `model({'input_ids': input_ids, 'token_type_ids': token_type_ids})`
 
     Parameters:
-        config (:class:`~transformers.T5Config`): Model configuration class with all the parameters of the model. 
+        config (:class:`~transformers_mrc.T5Config`): Model configuration class with all the parameters of the model. 
             Initializing with a config file does not load the weights associated with the model, only the configuration.
-            Check out the :meth:`~transformers.PreTrainedModel.from_pretrained` method to load the model weights.
+            Check out the :meth:`~transformers_mrc.PreTrainedModel.from_pretrained` method to load the model weights.
 """
 
 T5_INPUTS_DOCSTRING = r"""
@@ -573,9 +573,9 @@ T5_INPUTS_DOCSTRING = r"""
             T5 is a model with relative position embeddings so you should be able to pad the inputs on
             the right or the left.
 
-            Indices can be obtained using :class:`transformers.T5Tokenizer`.
-            See :func:`transformers.PreTrainedTokenizer.encode` and
-            :func:`transformers.PreTrainedTokenizer.convert_tokens_to_ids` for details.
+            Indices can be obtained using :class:`transformers_mrc.T5Tokenizer`.
+            See :func:`transformers_mrc.PreTrainedTokenizer.encode` and
+            :func:`transformers_mrc.PreTrainedTokenizer.convert_tokens_to_ids` for details.
         **attention_mask**: (`optional`) ``Numpy array`` or ``tf.Tensor`` of shape ``(batch_size, sequence_length)``:
             Mask to avoid performing attention on padding token indices.
             Mask values selected in ``[0, 1]``:
@@ -605,7 +605,7 @@ class TFT5Model(TFT5PreTrainedModel):
     Examples::
 
         import tensorflow as tf
-        from transformers import T5Tokenizer, TFT5Model
+        from transformers_mrc import T5Tokenizer, TFT5Model
 
         tokenizer = T5Tokenizer.from_pretrained('t5-small')
         model = TFT5Model.from_pretrained('t5-small')
@@ -696,7 +696,7 @@ class TFT5WithLMHeadModel(TFT5PreTrainedModel):
     Examples::
 
         import tensorflow as tf
-        from transformers import T5Tokenizer, TFT5WithLMHeadModel
+        from transformers_mrc import T5Tokenizer, TFT5WithLMHeadModel
 
         tokenizer = T5Tokenizer.from_pretrained('t5-small')
         model = TFT5WithLMHeadModel.from_pretrained('t5-small')

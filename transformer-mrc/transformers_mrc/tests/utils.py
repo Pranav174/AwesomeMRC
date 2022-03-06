@@ -3,7 +3,7 @@ import unittest
 
 from distutils.util import strtobool
 
-from transformers.file_utils import _tf_available, _torch_available
+from transformers_mrc.file_utils import _tf_available, _torch_available
 
 
 SMALL_MODEL_IDENTIFIER = "julien-c/bert-xsmall-dummy"

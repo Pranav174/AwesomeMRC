@@ -18,7 +18,7 @@ import unittest
 import json
 from io import open
 
-from transformers.tokenization_ctrl import CTRLTokenizer, VOCAB_FILES_NAMES
+from transformers_mrc.tokenization_ctrl import CTRLTokenizer, VOCAB_FILES_NAMES
 
 from .tokenization_tests_commons import CommonTestCases
 

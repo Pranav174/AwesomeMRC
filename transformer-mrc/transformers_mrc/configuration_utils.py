@@ -76,7 +76,7 @@ class PretrainedConfig(object):
 
     def save_pretrained(self, save_directory):
         """ Save a configuration object to the directory `save_directory`, so that it
-            can be re-loaded using the :func:`~transformers.PretrainedConfig.from_pretrained` class method.
+            can be re-loaded using the :func:`~transformers_mrc.PretrainedConfig.from_pretrained` class method.
         """
         assert os.path.isdir(save_directory), "Saving path should be a directory where the model and configuration can be saved"
 
@@ -88,14 +88,14 @@ class PretrainedConfig(object):
 
     @classmethod
     def from_pretrained(cls, pretrained_model_name_or_path, **kwargs):
-        r""" Instantiate a :class:`~transformers.PretrainedConfig` (or a derived class) from a pre-trained model configuration.
+        r""" Instantiate a :class:`~transformers_mrc.PretrainedConfig` (or a derived class) from a pre-trained model configuration.
 
         Parameters:
             pretrained_model_name_or_path: either:
 
                 - a string with the `shortcut name` of a pre-trained model configuration to load from cache or download, e.g.: ``bert-base-uncased``.
                 - a string with the `identifier name` of a pre-trained model configuration that was user-uploaded to our S3, e.g.: ``dbmdz/bert-base-german-cased``.
-                - a path to a `directory` containing a configuration file saved using the :func:`~transformers.PretrainedConfig.save_pretrained` method, e.g.: ``./my_model_directory/``.
+                - a path to a `directory` containing a configuration file saved using the :func:`~transformers_mrc.PretrainedConfig.save_pretrained` method, e.g.: ``./my_model_directory/``.
                 - a path or url to a saved configuration JSON `file`, e.g.: ``./my_model_directory/configuration.json``.
 
             cache_dir: (`optional`) string:

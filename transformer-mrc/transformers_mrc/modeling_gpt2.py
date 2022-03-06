@@ -282,9 +282,9 @@ GPT2_START_DOCSTRING = r"""    OpenAI GPT-2 model was proposed in
         https://pytorch.org/docs/stable/nn.html#module
 
     Parameters:
-        config (:class:`~transformers.GPT2Config`): Model configuration class with all the parameters of the model.
+        config (:class:`~transformers_mrc.GPT2Config`): Model configuration class with all the parameters of the model.
             Initializing with a config file does not load the weights associated with the model, only the configuration.
-            Check out the :meth:`~transformers.PreTrainedModel.from_pretrained` method to load the model weights.
+            Check out the :meth:`~transformers_mrc.PreTrainedModel.from_pretrained` method to load the model weights.
 """
 
 GPT2_INPUTS_DOCSTRING = r"""    Inputs:
@@ -292,9 +292,9 @@ GPT2_INPUTS_DOCSTRING = r"""    Inputs:
             Indices of input sequence tokens in the vocabulary.
             GPT-2 is a model with absolute position embeddings so it's usually advised to pad the inputs on
             the right rather than the left.
-            Indices can be obtained using :class:`transformers.GPT2Tokenizer`.
-            See :func:`transformers.PreTrainedTokenizer.encode` and
-            :func:`transformers.PreTrainedTokenizer.convert_tokens_to_ids` for details.
+            Indices can be obtained using :class:`transformers_mrc.GPT2Tokenizer`.
+            See :func:`transformers_mrc.PreTrainedTokenizer.encode` and
+            :func:`transformers_mrc.PreTrainedTokenizer.convert_tokens_to_ids` for details.
         **past**:
             list of ``torch.FloatTensor`` (one for each layer):
             that contains pre-computed hidden-states (key and values in the attention blocks) as computed by the model
@@ -518,7 +518,7 @@ class GPT2LMHeadModel(GPT2PreTrainedModel):
     Examples::
 
         import torch
-        from transformers import GPT2Tokenizer, GPT2LMHeadModel
+        from transformers_mrc import GPT2Tokenizer, GPT2LMHeadModel
 
         tokenizer = GPT2Tokenizer.from_pretrained('gpt2')
         model = GPT2LMHeadModel.from_pretrained('gpt2')
@@ -611,7 +611,7 @@ class GPT2DoubleHeadsModel(GPT2PreTrainedModel):
     Examples::
 
         import torch
-        from transformers import GPT2Tokenizer, GPT2DoubleHeadsModel
+        from transformers_mrc import GPT2Tokenizer, GPT2DoubleHeadsModel
         
         tokenizer = GPT2Tokenizer.from_pretrained('gpt2')
         model = GPT2DoubleHeadsModel.from_pretrained('gpt2')

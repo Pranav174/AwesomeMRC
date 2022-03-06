@@ -21,7 +21,7 @@ from io import open
 
 import torch
 
-from transformers import (CONFIG_NAME, WEIGHTS_NAME,
+from transformers_mrc import (CONFIG_NAME, WEIGHTS_NAME,
                                                      OpenAIGPTConfig,
                                                      OpenAIGPTModel,
                                                      load_tf_weights_in_openai_gpt)

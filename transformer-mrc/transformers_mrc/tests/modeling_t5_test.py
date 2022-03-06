@@ -19,15 +19,15 @@ from __future__ import print_function
 import unittest
 import shutil
 
-from transformers import is_torch_available
+from transformers_mrc import is_torch_available
 
 from .modeling_common_test import (CommonTestCases, ids_tensor, floats_tensor)
 from .configuration_common_test import ConfigTester
 from .utils import require_torch, slow, torch_device
 
 if is_torch_available():
-    from transformers import (T5Config, T5Model, T5WithLMHeadModel)
-    from transformers.modeling_t5 import T5_PRETRAINED_MODEL_ARCHIVE_MAP
+    from transformers_mrc import (T5Config, T5Model, T5WithLMHeadModel)
+    from transformers_mrc.modeling_t5 import T5_PRETRAINED_MODEL_ARCHIVE_MAP
 
 
 @require_torch

@@ -22,12 +22,12 @@ import json
 import random
 import shutil
 
-from transformers import XLNetConfig, is_tf_available
+from transformers_mrc import XLNetConfig, is_tf_available
 
 if is_tf_available():
     import tensorflow as tf
 
-    from transformers.modeling_tf_xlnet import (TFXLNetModel, TFXLNetLMHeadModel,
+    from transformers_mrc.modeling_tf_xlnet import (TFXLNetModel, TFXLNetLMHeadModel,
                                                         TFXLNetForSequenceClassification,
                                                         TFXLNetForTokenClassification,
                                                         TFXLNetForQuestionAnsweringSimple,

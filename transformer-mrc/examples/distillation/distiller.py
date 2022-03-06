@@ -34,7 +34,7 @@ try:
 except:
     from tensorboardX import SummaryWriter
 
-from transformers import get_linear_schedule_with_warmup
+from transformers_mrc import get_linear_schedule_with_warmup
 
 from utils import logger
 from lm_seqs_dataset import LmSeqsDataset

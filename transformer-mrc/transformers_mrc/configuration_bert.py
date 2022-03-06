@@ -53,7 +53,7 @@ BERT_PRETRAINED_CONFIG_ARCHIVE_MAP = {
 
 class BertConfig(PretrainedConfig):
     r"""
-        :class:`~transformers.BertConfig` is the configuration class to store the configuration of a
+        :class:`~transformers_mrc.BertConfig` is the configuration class to store the configuration of a
         `BertModel`.
 
 

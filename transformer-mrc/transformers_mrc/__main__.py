@@ -7,15 +7,15 @@ def main():
         "First argument to `transformers` command line interface should be one of: \n"
         ">> convert serve train predict")
     if sys.argv[1] == "convert":
-        from transformers.commands import convert
+        from transformers_mrc.commands import convert
         convert(sys.argv)
     elif sys.argv[1] == "train":
-        from transformers.commands import train
+        from transformers_mrc.commands import train
         train(sys.argv)
     elif sys.argv[1] == "serve":
         pass
         # from argparse import ArgumentParser
-        # from transformers.commands.serving import ServeCommand
+        # from transformers_mrc.commands.serving import ServeCommand
         # parser = ArgumentParser('Transformers CLI tool', usage='transformers serve <command> [<args>]')
         # commands_parser = parser.add_subparsers(help='transformers-cli command helpers')
 

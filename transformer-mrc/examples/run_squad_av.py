@@ -604,12 +604,12 @@ def main():
             checkpoints = [args.output_dir]
             if args.eval_all_checkpoints:
                 checkpoints = list(os.path.dirname(c) for c in sorted(glob.glob(args.output_dir + '/**/' + WEIGHTS_NAME, recursive=True)))
-                logging.getLogger("transformers.modeling_utils").setLevel(logging.WARN)  # Reduce model loading logs
+                logging.getLogger("transformers_mrc.modeling_utils").setLevel(logging.WARN)  # Reduce model loading logs
         else:
             if args.eval_all_checkpoints:
                 checkpoints = list(os.path.dirname(c) for c in sorted(glob.glob(args.output_dir + '/**/' + WEIGHTS_NAME, recursive=True)))
                 logger.info("Loading checkpoint %s for evaluation", checkpoints)
-                logging.getLogger("transformers.modeling_utils").setLevel(logging.WARN)  # Reduce model loading logs
+                logging.getLogger("transformers_mrc.modeling_utils").setLevel(logging.WARN)  # Reduce model loading logs
             else:
                 logger.info("Loading checkpoint %s for evaluation", args.model_name_or_path)
                 checkpoints = [args.model_name_or_path]

@@ -19,17 +19,17 @@ from __future__ import print_function
 import unittest
 import shutil
 
-from transformers import is_torch_available
+from transformers_mrc import is_torch_available
 
 from .modeling_common_test import (CommonTestCases, ids_tensor)
 from .configuration_common_test import ConfigTester
 from .utils import require_torch, slow, torch_device
 
 if is_torch_available():
-    from transformers import (AlbertConfig, AlbertModel, AlbertForMaskedLM,
+    from transformers_mrc import (AlbertConfig, AlbertModel, AlbertForMaskedLM,
                               AlbertForSequenceClassification, AlbertForQuestionAnswering,
                               )
-    from transformers.modeling_albert import ALBERT_PRETRAINED_MODEL_ARCHIVE_MAP
+    from transformers_mrc.modeling_albert import ALBERT_PRETRAINED_MODEL_ARCHIVE_MAP
 
 
 @require_torch

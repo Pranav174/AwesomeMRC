@@ -354,9 +354,9 @@ CTRL_START_DOCSTRING = r"""    CTRL model was proposed in
         https://pytorch.org/docs/stable/nn.html#module
 
     Parameters:
-        config (:class:`~transformers.CTRLConfig`): Model configuration class with all the parameters of the model.
+        config (:class:`~transformers_mrc.CTRLConfig`): Model configuration class with all the parameters of the model.
             Initializing with a config file does not load the weights associated with the model, only the configuration.
-            Check out the :meth:`~transformers.PreTrainedModel.from_pretrained` method to load the model weights.
+            Check out the :meth:`~transformers_mrc.PreTrainedModel.from_pretrained` method to load the model weights.
 """
 
 CTRL_INPUTS_DOCSTRING = r"""    Inputs:
@@ -364,9 +364,9 @@ CTRL_INPUTS_DOCSTRING = r"""    Inputs:
             Indices of input sequence tokens in the vocabulary.
             CTRL is a model with absolute position embeddings so it's usually advised to pad the inputs on
             the right rather than the left.
-            Indices can be obtained using :class:`transformers.CTRLTokenizer`.
-            See :func:`transformers.PreTrainedTokenizer.encode` and
-            :func:`transformers.PreTrainedTokenizer.convert_tokens_to_ids` for details.
+            Indices can be obtained using :class:`transformers_mrc.CTRLTokenizer`.
+            See :func:`transformers_mrc.PreTrainedTokenizer.encode` and
+            :func:`transformers_mrc.PreTrainedTokenizer.convert_tokens_to_ids` for details.
         **past**:
             list of ``Numpy array`` or ``tf.Tensor`` (one for each layer):
             that contains pre-computed hidden-states (key and values in the attention blocks) as computed by the model
@@ -414,7 +414,7 @@ class TFCTRLModel(TFCTRLPreTrainedModel):
     Examples::
 
         import tensorflow as tf
-        from transformers import CTRLTokenizer, TFCTRLModel
+        from transformers_mrc import CTRLTokenizer, TFCTRLModel
 
         tokenizer = CTRLTokenizer.from_pretrained('ctrl')
         model = TFCTRLModel.from_pretrained('ctrl')
@@ -476,7 +476,7 @@ class TFCTRLLMHeadModel(TFCTRLPreTrainedModel):
     Examples::
 
         import torch
-        from transformers import CTRLTokenizer, TFCTRLLMHeadModel
+        from transformers_mrc import CTRLTokenizer, TFCTRLLMHeadModel
 
         tokenizer = CTRLTokenizer.from_pretrained('ctrl')
         model = TFCTRLLMHeadModel.from_pretrained('ctrl')

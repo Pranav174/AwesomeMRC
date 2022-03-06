@@ -726,9 +726,9 @@ XLNET_START_DOCSTRING = r"""    The XLNet model was proposed in
             `model({'input_ids': input_ids, 'token_type_ids': token_type_ids})`
 
     Parameters:
-        config (:class:`~transformers.XLNetConfig`): Model configuration class with all the parameters of the model.
+        config (:class:`~transformers_mrc.XLNetConfig`): Model configuration class with all the parameters of the model.
             Initializing with a config file does not load the weights associated with the model, only the configuration.
-            Check out the :meth:`~transformers.PreTrainedModel.from_pretrained` method to load the model weights.
+            Check out the :meth:`~transformers_mrc.PreTrainedModel.from_pretrained` method to load the model weights.
 """
 
 XLNET_INPUTS_DOCSTRING = r"""
@@ -737,9 +737,9 @@ XLNET_INPUTS_DOCSTRING = r"""
             Indices of input sequence tokens in the vocabulary.
             XLNet is a model with relative position embeddings so you can either pad the inputs on
             the right or on the left.
-            Indices can be obtained using :class:`transformers.XLNetTokenizer`.
-            See :func:`transformers.PreTrainedTokenizer.encode` and
-            :func:`transformers.PreTrainedTokenizer.convert_tokens_to_ids` for details.
+            Indices can be obtained using :class:`transformers_mrc.XLNetTokenizer`.
+            See :func:`transformers_mrc.PreTrainedTokenizer.encode` and
+            :func:`transformers_mrc.PreTrainedTokenizer.convert_tokens_to_ids` for details.
         **attention_mask**: (`optional`) ``Numpy array`` or ``tf.Tensor`` of shape ``(batch_size, sequence_length)``:
             Mask to avoid performing attention on padding token indices.
             Mask values selected in ``[0, 1]``:
@@ -807,7 +807,7 @@ class TFXLNetModel(TFXLNetPreTrainedModel):
     Examples::
 
         import tensorflow as tf
-        from transformers import XLNetTokenizer, TFXLNetModel
+        from transformers_mrc import XLNetTokenizer, TFXLNetModel
 
         tokenizer = XLNetTokenizer.from_pretrained('xlnet-large-cased')
         model = TFXLNetModel.from_pretrained('xlnet-large-cased')
@@ -849,7 +849,7 @@ class TFXLNetLMHeadModel(TFXLNetPreTrainedModel):
     Examples::
 
         import tensorflow as tf
-        from transformers import XLNetTokenizer, TFXLNetLMHeadModel
+        from transformers_mrc import XLNetTokenizer, TFXLNetLMHeadModel
 
         tokenizer = XLNetTokenizer.from_pretrained('xlnet-large-cased')
         model = TFXLNetLMHeadModel.from_pretrained('xlnet-large-cased')
@@ -907,7 +907,7 @@ class TFXLNetForSequenceClassification(TFXLNetPreTrainedModel):
     Examples::
 
         import tensorflow as tf
-        from transformers import XLNetTokenizer, TFXLNetForSequenceClassification
+        from transformers_mrc import XLNetTokenizer, TFXLNetForSequenceClassification
 
         tokenizer = XLNetTokenizer.from_pretrained('xlnet-large-cased')
         model = TFXLNetForSequenceClassification.from_pretrained('xlnet-large-cased')
@@ -962,7 +962,7 @@ class TFXLNetForTokenClassification(TFXLNetPreTrainedModel):
     Examples::
 
         import tensorflow as tf
-        from transformers import XLNetTokenizer, TFXLNetForTokenClassification
+        from transformers_mrc import XLNetTokenizer, TFXLNetForTokenClassification
 
         tokenizer = XLNetTokenizer.from_pretrained('xlnet-large-cased')
         model = TFXLNetForSequenceClassification.from_pretrained('xlnet-large-cased')
@@ -1018,7 +1018,7 @@ class TFXLNetForQuestionAnsweringSimple(TFXLNetPreTrainedModel):
     Examples::
 
         import tensorflow as tf
-        from transformers import XLNetTokenizer, TFXLNetForQuestionAnsweringSimple
+        from transformers_mrc import XLNetTokenizer, TFXLNetForQuestionAnsweringSimple
 
         tokenizer = XLNetTokenizer.from_pretrained('xlnet-base-cased')
         model = TFXLNetForQuestionAnsweringSimple.from_pretrained('xlnet-base-cased')

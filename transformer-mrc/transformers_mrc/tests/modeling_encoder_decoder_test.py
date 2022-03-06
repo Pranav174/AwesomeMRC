@@ -16,12 +16,12 @@
 import logging
 import unittest
 
-from transformers import is_torch_available
+from transformers_mrc import is_torch_available
 from .utils import require_torch, slow
 
 if is_torch_available():
-    from transformers import BertModel, BertForMaskedLM, Model2Model
-    from transformers.modeling_bert import BERT_PRETRAINED_MODEL_ARCHIVE_MAP
+    from transformers_mrc import BertModel, BertForMaskedLM, Model2Model
+    from transformers_mrc.modeling_bert import BERT_PRETRAINED_MODEL_ARCHIVE_MAP
 
 
 @require_torch

@@ -49,7 +49,7 @@ PRETRAINED_POSITIONAL_EMBEDDINGS_SIZES = {
 class DistilBertTokenizer(BertTokenizer):
     r"""
     Constructs a DistilBertTokenizer.
-    :class:`~transformers.DistilBertTokenizer` is identical to BertTokenizer and runs end-to-end tokenization: punctuation splitting + wordpiece
+    :class:`~transformers_mrc.DistilBertTokenizer` is identical to BertTokenizer and runs end-to-end tokenization: punctuation splitting + wordpiece
 
     Args:
         vocab_file: Path to a one-wordpiece-per-line vocabulary file

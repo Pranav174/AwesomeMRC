@@ -18,10 +18,10 @@ from __future__ import print_function
 
 import unittest
 
-from transformers import is_torch_available
+from transformers_mrc import is_torch_available
 
 if is_torch_available():
-    from transformers import (DistilBertConfig, DistilBertModel, DistilBertForMaskedLM,
+    from transformers_mrc import (DistilBertConfig, DistilBertModel, DistilBertForMaskedLM,
                                     DistilBertForTokenClassification,
                                     DistilBertForQuestionAnswering, DistilBertForSequenceClassification)
 

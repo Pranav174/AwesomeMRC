@@ -20,17 +20,17 @@ import unittest
 import shutil
 import logging
 
-from transformers import is_tf_available
+from transformers_mrc import is_tf_available
 
 from .utils import require_tf, slow, SMALL_MODEL_IDENTIFIER
 
 if is_tf_available():
-    from transformers import (AutoConfig, BertConfig,
+    from transformers_mrc import (AutoConfig, BertConfig,
                                       TFAutoModel, TFBertModel,
                                       TFAutoModelWithLMHead, TFBertForMaskedLM,
                                       TFAutoModelForSequenceClassification, TFBertForSequenceClassification,
                                       TFAutoModelForQuestionAnswering, TFBertForQuestionAnswering)
-    from transformers.modeling_tf_bert import TF_BERT_PRETRAINED_MODEL_ARCHIVE_MAP
+    from transformers_mrc.modeling_tf_bert import TF_BERT_PRETRAINED_MODEL_ARCHIVE_MAP
 
     from .modeling_common_test import (CommonTestCases, ids_tensor)
     from .configuration_common_test import ConfigTester

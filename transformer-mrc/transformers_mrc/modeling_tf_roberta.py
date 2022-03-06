@@ -119,9 +119,9 @@ ROBERTA_START_DOCSTRING = r"""    The RoBERTa model was proposed in
             `model({'input_ids': input_ids, 'token_type_ids': token_type_ids})`
 
     Parameters:
-        config (:class:`~transformers.RobertaConfig`): Model configuration class with all the parameters of the 
+        config (:class:`~transformers_mrc.RobertaConfig`): Model configuration class with all the parameters of the 
             model. Initializing with a config file does not load the weights associated with the model, only the configuration.
-            Check out the :meth:`~transformers.PreTrainedModel.from_pretrained` method to load the model weights.
+            Check out the :meth:`~transformers_mrc.PreTrainedModel.from_pretrained` method to load the model weights.
 """
 
 ROBERTA_INPUTS_DOCSTRING = r"""
@@ -144,8 +144,8 @@ ROBERTA_INPUTS_DOCSTRING = r"""
             RoBERTa is a model with absolute position embeddings so it's usually advised to pad the inputs on
             the right rather than the left.
 
-            See :func:`transformers.PreTrainedTokenizer.encode` and
-            :func:`transformers.PreTrainedTokenizer.convert_tokens_to_ids` for details.
+            See :func:`transformers_mrc.PreTrainedTokenizer.encode` and
+            :func:`transformers_mrc.PreTrainedTokenizer.convert_tokens_to_ids` for details.
         **attention_mask**: (`optional`) ``Numpy array`` or ``tf.Tensor`` of shape ``(batch_size, sequence_length)``:
             Mask to avoid performing attention on padding token indices.
             Mask values selected in ``[0, 1]``:
@@ -195,7 +195,7 @@ class TFRobertaModel(TFRobertaPreTrainedModel):
     Examples::
 
         import tensorflow as tf
-        from transformers import RobertaTokenizer, TFRobertaModel
+        from transformers_mrc import RobertaTokenizer, TFRobertaModel
 
         tokenizer = RobertaTokenizer.from_pretrained('roberta-base')
         model = TFRobertaModel.from_pretrained('roberta-base')
@@ -272,7 +272,7 @@ class TFRobertaForMaskedLM(TFRobertaPreTrainedModel):
     Examples::
 
         import tensorflow as tf
-        from transformers import RobertaTokenizer, TFRobertaForMaskedLM
+        from transformers_mrc import RobertaTokenizer, TFRobertaForMaskedLM
 
         tokenizer = RobertaTokenizer.from_pretrained('roberta-base')
         model = TFRobertaForMaskedLM.from_pretrained('roberta-base')
@@ -343,7 +343,7 @@ class TFRobertaForSequenceClassification(TFRobertaPreTrainedModel):
     Examples::
 
         import tensorflow as tf
-        from transformers import RobertaTokenizer, TFRobertaForSequenceClassification
+        from transformers_mrc import RobertaTokenizer, TFRobertaForSequenceClassification
 
         tokenizer = RoertaTokenizer.from_pretrained('roberta-base')
         model = TFRobertaForSequenceClassification.from_pretrained('roberta-base')
@@ -390,7 +390,7 @@ class TFRobertaForTokenClassification(TFRobertaPreTrainedModel):
     Examples::
 
         import tensorflow as tf
-        from transformers import RobertaTokenizer, TFRobertaForTokenClassification
+        from transformers_mrc import RobertaTokenizer, TFRobertaForTokenClassification
 
         tokenizer = RobertaTokenizer.from_pretrained('roberta-base')
         model = TFRobertaForTokenClassification.from_pretrained('roberta-base')

@@ -19,12 +19,12 @@ from __future__ import print_function
 import unittest
 import os
 
-from transformers import is_torch_available
+from transformers_mrc import is_torch_available
 
 if is_torch_available():
     import torch
 
-    from transformers import (AdamW,
+    from transformers_mrc import (AdamW,
                               get_constant_schedule,
                               get_constant_schedule_with_warmup,
                               get_cosine_schedule_with_warmup,

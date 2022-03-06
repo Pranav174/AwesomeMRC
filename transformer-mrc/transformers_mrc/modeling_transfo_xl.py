@@ -531,9 +531,9 @@ TRANSFO_XL_START_DOCSTRING = r"""    The Transformer-XL model was proposed in
         https://pytorch.org/docs/stable/nn.html#module
 
     Parameters:
-        config (:class:`~transformers.TransfoXLConfig`): Model configuration class with all the parameters of the model.
+        config (:class:`~transformers_mrc.TransfoXLConfig`): Model configuration class with all the parameters of the model.
             Initializing with a config file does not load the weights associated with the model, only the configuration.
-            Check out the :meth:`~transformers.PreTrainedModel.from_pretrained` method to load the model weights.
+            Check out the :meth:`~transformers_mrc.PreTrainedModel.from_pretrained` method to load the model weights.
 """
 
 TRANSFO_XL_INPUTS_DOCSTRING = r"""
@@ -542,9 +542,9 @@ TRANSFO_XL_INPUTS_DOCSTRING = r"""
             Indices of input sequence tokens in the vocabulary.
             Transformer-XL is a model with relative position embeddings so you can either pad the inputs on
             the right or on the left.
-            Indices can be obtained using :class:`transformers.TransfoXLTokenizer`.
-            See :func:`transformers.PreTrainedTokenizer.encode` and
-            :func:`transformers.PreTrainedTokenizer.convert_tokens_to_ids` for details.
+            Indices can be obtained using :class:`transformers_mrc.TransfoXLTokenizer`.
+            See :func:`transformers_mrc.PreTrainedTokenizer.encode` and
+            :func:`transformers_mrc.PreTrainedTokenizer.convert_tokens_to_ids` for details.
         **mems**: (`optional`)
             list of ``torch.FloatTensor`` (one for each layer):
             that contains pre-computed hidden-states (key and values in the attention blocks) as computed by the model

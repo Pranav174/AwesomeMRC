@@ -16,8 +16,8 @@
 """ Finetuning the library models for question-answering on SQuAD (DistilBERT, Bert, XLM, XLNet)."""
 
 from __future__ import absolute_import, division, print_function
-from transformers.data.processors.squad import SquadV1Processor, SquadV2Processor, SquadResult
-from transformers.data.metrics.squad_metrics import compute_predictions_logits, compute_predictions_log_probs, squad_evaluate
+from transformers_mrc.data.processors.squad import SquadV1Processor, SquadV2Processor, SquadResult
+from transformers_mrc.data.metrics.squad_metrics import compute_predictions_logits, compute_predictions_log_probs, squad_evaluate
 from examples.evaluate_official2 import eval_squad
 import argparse
 import logging
@@ -37,7 +37,7 @@ except:
 
 from tqdm import tqdm, trange
 
-from transformers import (WEIGHTS_NAME, BertConfig,
+from transformers_mrc import (WEIGHTS_NAME, BertConfig,
                                   BertForQuestionAnswering, BertTokenizer,
                                   XLMConfig, XLMForQuestionAnswering,
                                   XLMTokenizer, XLNetConfig,
@@ -48,7 +48,7 @@ from transformers import (WEIGHTS_NAME, BertConfig,
                                   XLMConfig, XLMForQuestionAnswering, XLMTokenizer,
                                   )
 
-from transformers import AdamW, get_linear_schedule_with_warmup, squad_convert_examples_to_features
+from transformers_mrc import AdamW, get_linear_schedule_with_warmup, squad_convert_examples_to_features
 
 logger = logging.getLogger(__name__)
 
@@ -594,12 +594,12 @@ def main():
             checkpoints = [args.output_dir]
             if args.eval_all_checkpoints:
                 checkpoints = list(os.path.dirname(c) for c in sorted(glob.glob(args.output_dir + '/**/' + WEIGHTS_NAME, recursive=True)))
-                logging.getLogger("transformers.modeling_utils").setLevel(logging.WARN)  # Reduce model loading logs
+                logging.getLogger("transformers_mrc.modeling_utils").setLevel(logging.WARN)  # Reduce model loading logs
         else:
             if args.eval_all_checkpoints:
                 checkpoints = list(os.path.dirname(c) for c in sorted(glob.glob(args.output_dir + '/**/' + WEIGHTS_NAME, recursive=True)))
                 logger.info("Loading checkpoint %s for evaluation", checkpoints)
-                logging.getLogger("transformers.modeling_utils").setLevel(logging.WARN)  # Reduce model loading logs
+                logging.getLogger("transformers_mrc.modeling_utils").setLevel(logging.WARN)  # Reduce model loading logs
             else:
                 logger.info("Loading checkpoint %s for evaluation", args.model_name_or_path)
                 checkpoints = [args.model_name_or_path]

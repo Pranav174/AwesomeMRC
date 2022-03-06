@@ -39,10 +39,10 @@ except:
 
 from tqdm import tqdm, trange
 
-from transformers import (WEIGHTS_NAME, BertConfig,
+from transformers_mrc import (WEIGHTS_NAME, BertConfig,
                                   BertForMultipleChoice, BertTokenizer)
 
-from transformers import AdamW, get_linear_schedule_with_warmup
+from transformers_mrc import AdamW, get_linear_schedule_with_warmup
 
 logger = logging.getLogger(__name__)
 
@@ -651,7 +651,7 @@ def main():
 
         if args.eval_all_checkpoints:
             checkpoints = list(os.path.dirname(c) for c in sorted(glob.glob(args.output_dir + '/**/' + WEIGHTS_NAME, recursive=True)))
-            logging.getLogger("transformers.modeling_utils").setLevel(logging.WARN)  # Reduce model loading logs
+            logging.getLogger("transformers_mrc.modeling_utils").setLevel(logging.WARN)  # Reduce model loading logs
 
         logger.info("Evaluate the following checkpoints: %s", checkpoints)
 

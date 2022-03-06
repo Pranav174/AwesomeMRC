@@ -2,8 +2,8 @@ from argparse import ArgumentParser
 from getpass import getpass
 import os
 
-from transformers.commands import BaseTransformersCLICommand
-from transformers.hf_api import HfApi, HfFolder, HTTPError
+from transformers_mrc.commands import BaseTransformersCLICommand
+from transformers_mrc.hf_api import HfApi, HfFolder, HTTPError
 
 
 class UserCommands(BaseTransformersCLICommand):

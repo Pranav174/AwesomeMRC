@@ -27,15 +27,15 @@ import tempfile
 
 import sys
 
-from transformers import is_tf_available, is_torch_available
+from transformers_mrc import is_tf_available, is_torch_available
 
 from .utils import require_tf, slow
 
 if is_tf_available():
     import tensorflow as tf
     import numpy as np
-    from transformers import TFPreTrainedModel
-    # from transformers.modeling_bert import BertModel, BertConfig, BERT_PRETRAINED_MODEL_ARCHIVE_MAP
+    from transformers_mrc import TFPreTrainedModel
+    # from transformers_mrc.modeling_bert import BertModel, BertConfig, BERT_PRETRAINED_MODEL_ARCHIVE_MAP
 
 if sys.version_info[0] == 2:
     import cPickle as pickle
@@ -121,8 +121,8 @@ class TFCommonTestCases:
                 pt_model = pt_model_class(config)
 
                 # Check we can load pt model in tf and vice-versa with model => model functions
-                tf_model = transformers.load_pytorch_model_in_tf2_model(tf_model, pt_model, tf_inputs=inputs_dict)
-                pt_model = transformers.load_tf2_model_in_pytorch_model(pt_model, tf_model)
+                tf_model = transformers_mrc.load_pytorch_model_in_tf2_model(tf_model, pt_model, tf_inputs=inputs_dict)
+                pt_model = transformers_mrc.load_tf2_model_in_pytorch_model(pt_model, tf_model)
 
                 # Check predictions on first output (logits/hidden-states) are close enought given low-level computational differences
                 pt_model.eval()
@@ -142,11 +142,11 @@ class TFCommonTestCases:
                 with TemporaryDirectory() as tmpdirname:
                     pt_checkpoint_path = os.path.join(tmpdirname, 'pt_model.bin')
                     torch.save(pt_model.state_dict(), pt_checkpoint_path)
-                    tf_model = transformers.load_pytorch_checkpoint_in_tf2_model(tf_model, pt_checkpoint_path)
+                    tf_model = transformers_mrc.load_pytorch_checkpoint_in_tf2_model(tf_model, pt_checkpoint_path)
 
                     tf_checkpoint_path = os.path.join(tmpdirname, 'tf_model.h5')
                     tf_model.save_weights(tf_checkpoint_path)
-                    pt_model = transformers.load_tf2_checkpoint_in_pytorch_model(pt_model, tf_checkpoint_path)
+                    pt_model = transformers_mrc.load_tf2_checkpoint_in_pytorch_model(pt_model, tf_checkpoint_path)
 
                 # Check predictions on first output (logits/hidden-states) are close enought given low-level computational differences
                 pt_model.eval()

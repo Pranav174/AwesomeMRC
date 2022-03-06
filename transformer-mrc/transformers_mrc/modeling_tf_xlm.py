@@ -502,9 +502,9 @@ XLM_START_DOCSTRING = r"""    The XLM model was proposed in
             `model({'input_ids': input_ids, 'token_type_ids': token_type_ids})`
 
     Parameters:
-        config (:class:`~transformers.XLMConfig`): Model configuration class with all the parameters of the model.
+        config (:class:`~transformers_mrc.XLMConfig`): Model configuration class with all the parameters of the model.
             Initializing with a config file does not load the weights associated with the model, only the configuration.
-            Check out the :meth:`~transformers.PreTrainedModel.from_pretrained` method to load the model weights.
+            Check out the :meth:`~transformers_mrc.PreTrainedModel.from_pretrained` method to load the model weights.
 """
 
 XLM_INPUTS_DOCSTRING = r"""
@@ -515,9 +515,9 @@ XLM_INPUTS_DOCSTRING = r"""
             XLM is a model with absolute position embeddings so it's usually advised to pad the inputs on
             the right rather than the left.
 
-            Indices can be obtained using :class:`transformers.XLMTokenizer`.
-            See :func:`transformers.PreTrainedTokenizer.encode` and
-            :func:`transformers.PreTrainedTokenizer.convert_tokens_to_ids` for details.
+            Indices can be obtained using :class:`transformers_mrc.XLMTokenizer`.
+            See :func:`transformers_mrc.PreTrainedTokenizer.encode` and
+            :func:`transformers_mrc.PreTrainedTokenizer.convert_tokens_to_ids` for details.
         **attention_mask**: (`optional`) ``Numpy array`` or ``tf.Tensor`` of shape ``(batch_size, sequence_length)``:
             Mask to avoid performing attention on padding token indices.
             Mask values selected in ``[0, 1]``:
@@ -572,7 +572,7 @@ class TFXLMModel(TFXLMPreTrainedModel):
     Examples::
 
         import tensorflow as tf
-        from transformers import XLMTokenizer, TFXLMModel
+        from transformers_mrc import XLMTokenizer, TFXLMModel
 
         tokenizer = XLMTokenizer.from_pretrained('xlm-mlm-en-2048')
         model = TFXLMModel.from_pretrained('xlm-mlm-en-2048')
@@ -645,7 +645,7 @@ class TFXLMWithLMHeadModel(TFXLMPreTrainedModel):
     Examples::
 
         import tensorflow as tf
-        from transformers import XLMTokenizer, TFXLMWithLMHeadModel
+        from transformers_mrc import XLMTokenizer, TFXLMWithLMHeadModel
 
         tokenizer = XLMTokenizer.from_pretrained('xlm-mlm-en-2048')
         model = TFXLMWithLMHeadModel.from_pretrained('xlm-mlm-en-2048')
@@ -691,7 +691,7 @@ class TFXLMForSequenceClassification(TFXLMPreTrainedModel):
     Examples::
 
         import tensorflow as tf
-        from transformers import XLMTokenizer, TFXLMForSequenceClassification
+        from transformers_mrc import XLMTokenizer, TFXLMForSequenceClassification
 
         tokenizer = XLMTokenizer.from_pretrained('xlm-mlm-en-2048')
         model = TFXLMForSequenceClassification.from_pretrained('xlm-mlm-en-2048')
@@ -739,7 +739,7 @@ class TFXLMForQuestionAnsweringSimple(TFXLMPreTrainedModel):
     Examples::
 
         import tensorflow as tf
-        from transformers import XLMTokenizer, TFXLMForQuestionAnsweringSimple
+        from transformers_mrc import XLMTokenizer, TFXLMForQuestionAnsweringSimple
 
         tokenizer = XLMTokenizer.from_pretrained('xlm-mlm-en-2048')
         model = TFXLMForQuestionAnsweringSimple.from_pretrained('xlm-mlm-en-2048')

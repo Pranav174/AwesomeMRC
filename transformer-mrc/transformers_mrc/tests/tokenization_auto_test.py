@@ -20,8 +20,8 @@ import unittest
 import shutil
 import logging
 
-from transformers import AutoTokenizer, BertTokenizer, AutoTokenizer, GPT2Tokenizer
-from transformers import BERT_PRETRAINED_CONFIG_ARCHIVE_MAP, GPT2_PRETRAINED_CONFIG_ARCHIVE_MAP
+from transformers_mrc import AutoTokenizer, BertTokenizer, AutoTokenizer, GPT2Tokenizer
+from transformers_mrc import BERT_PRETRAINED_CONFIG_ARCHIVE_MAP, GPT2_PRETRAINED_CONFIG_ARCHIVE_MAP
 
 from .utils import slow, SMALL_MODEL_IDENTIFIER
 

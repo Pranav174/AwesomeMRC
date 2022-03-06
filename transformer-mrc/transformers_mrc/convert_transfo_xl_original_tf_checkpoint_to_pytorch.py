@@ -23,12 +23,12 @@ from io import open
 
 import torch
 
-import transformers.tokenization_transfo_xl as data_utils
+import transformers_mrc.tokenization_transfo_xl as data_utils
 
-from transformers import CONFIG_NAME, WEIGHTS_NAME
-from transformers import (TransfoXLConfig, TransfoXLLMHeadModel,
+from transformers_mrc import CONFIG_NAME, WEIGHTS_NAME
+from transformers_mrc import (TransfoXLConfig, TransfoXLLMHeadModel,
                                                       load_tf_weights_in_transfo_xl)
-from transformers.tokenization_transfo_xl import (CORPUS_NAME, VOCAB_FILES_NAMES)
+from transformers_mrc.tokenization_transfo_xl import (CORPUS_NAME, VOCAB_FILES_NAMES)
 
 if sys.version_info[0] == 2:
     import cPickle as pickle

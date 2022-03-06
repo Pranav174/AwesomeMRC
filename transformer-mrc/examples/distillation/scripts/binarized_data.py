@@ -20,7 +20,7 @@ import pickle
 import random
 import time
 import numpy as np
-from transformers import BertTokenizer, RobertaTokenizer, GPT2Tokenizer
+from transformers_mrc import BertTokenizer, RobertaTokenizer, GPT2Tokenizer
 import logging
 
 logging.basicConfig(format = '%(asctime)s - %(levelname)s - %(name)s -   %(message)s',

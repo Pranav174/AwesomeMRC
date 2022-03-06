@@ -21,7 +21,7 @@ from __future__ import print_function
 import argparse
 import torch
 
-from transformers import AlbertConfig, AlbertForMaskedLM, load_tf_weights_in_albert
+from transformers_mrc import AlbertConfig, AlbertForMaskedLM, load_tf_weights_in_albert
 
 import logging
 logging.basicConfig(level=logging.INFO)

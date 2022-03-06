@@ -18,7 +18,7 @@ import os
 import unittest
 from io import open
 
-from transformers.tokenization_distilbert import (DistilBertTokenizer)
+from transformers_mrc.tokenization_distilbert import (DistilBertTokenizer)
 
 from .tokenization_tests_commons import CommonTestCases
 from .tokenization_bert_test import BertTokenizationTest

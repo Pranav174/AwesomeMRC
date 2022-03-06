@@ -4,7 +4,7 @@ from __future__ import print_function
 
 import unittest
 
-from transformers import is_tf_available
+from transformers_mrc import is_tf_available
 
 from .utils import require_tf
 
@@ -12,7 +12,7 @@ if is_tf_available():
     import tensorflow as tf
     from tensorflow.python.eager import context
     from tensorflow.python.framework import ops
-    from transformers import (create_optimizer, GradientAccumulator)
+    from transformers_mrc import (create_optimizer, GradientAccumulator)
 
 
 @require_tf

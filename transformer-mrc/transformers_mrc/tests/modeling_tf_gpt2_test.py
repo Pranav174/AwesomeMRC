@@ -24,11 +24,11 @@ from .modeling_tf_common_test import (TFCommonTestCases, ids_tensor)
 from .configuration_common_test import ConfigTester
 from .utils import require_tf, slow
 
-from transformers import GPT2Config, is_tf_available
+from transformers_mrc import GPT2Config, is_tf_available
 
 if is_tf_available():
     import tensorflow as tf
-    from transformers.modeling_tf_gpt2 import (TFGPT2Model, TFGPT2LMHeadModel,
+    from transformers_mrc.modeling_tf_gpt2 import (TFGPT2Model, TFGPT2LMHeadModel,
                                                        TFGPT2DoubleHeadsModel,
                                                        TF_GPT2_PRETRAINED_MODEL_ARCHIVE_MAP)
 

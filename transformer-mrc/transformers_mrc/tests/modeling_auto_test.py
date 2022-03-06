@@ -20,17 +20,17 @@ import unittest
 import shutil
 import logging
 
-from transformers import is_torch_available
+from transformers_mrc import is_torch_available
 
 from .utils import require_torch, slow, SMALL_MODEL_IDENTIFIER
 
 if is_torch_available():
-    from transformers import (AutoConfig, BertConfig,
+    from transformers_mrc import (AutoConfig, BertConfig,
                                     AutoModel, BertModel,
                                     AutoModelWithLMHead, BertForMaskedLM,
                                     AutoModelForSequenceClassification, BertForSequenceClassification,
                                     AutoModelForQuestionAnswering, BertForQuestionAnswering)
-    from transformers.modeling_bert import BERT_PRETRAINED_MODEL_ARCHIVE_MAP
+    from transformers_mrc.modeling_bert import BERT_PRETRAINED_MODEL_ARCHIVE_MAP
 
     from .modeling_common_test import (CommonTestCases, ids_tensor)
     from .configuration_common_test import ConfigTester

@@ -19,7 +19,7 @@ import unittest
 import json
 from io import open
 
-from transformers.tokenization_gpt2 import GPT2Tokenizer, VOCAB_FILES_NAMES
+from transformers_mrc.tokenization_gpt2 import GPT2Tokenizer, VOCAB_FILES_NAMES
 
 from .tokenization_tests_commons import CommonTestCases
 

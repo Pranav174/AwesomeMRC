@@ -508,9 +508,9 @@ DISTILBERT_START_DOCSTRING = r"""
             `model({'input_ids': input_ids, 'token_type_ids': token_type_ids})`
 
     Parameters:
-        config (:class:`~transformers.DistilBertConfig`): Model configuration class with all the parameters of the model. 
+        config (:class:`~transformers_mrc.DistilBertConfig`): Model configuration class with all the parameters of the model. 
             Initializing with a config file does not load the weights associated with the model, only the configuration.
-            Check out the :meth:`~transformers.PreTrainedModel.from_pretrained` method to load the model weights.
+            Check out the :meth:`~transformers_mrc.PreTrainedModel.from_pretrained` method to load the model weights.
 """
 
 DISTILBERT_INPUTS_DOCSTRING = r"""
@@ -552,7 +552,7 @@ class TFDistilBertModel(TFDistilBertPreTrainedModel):
     Examples::
 
         import tensorflow as tf
-        from transformers import DistilBertTokenizer, TFDistilBertModel
+        from transformers_mrc import DistilBertTokenizer, TFDistilBertModel
 
         tokenizer = DistilBertTokenizer.from_pretrained('distilbert-base-uncased')
         model = TFDistilBertModel.from_pretrained('distilbert-base-uncased')
@@ -610,7 +610,7 @@ class TFDistilBertForMaskedLM(TFDistilBertPreTrainedModel):
     Examples::
 
         import tensorflow as tf
-        from transformers import DistilBertTokenizer, TFDistilBertForMaskedLM
+        from transformers_mrc import DistilBertTokenizer, TFDistilBertForMaskedLM
 
         tokenizer = DistilBertTokenizer.from_pretrained('distilbert-base-uncased')
         model = TFDistilBertForMaskedLM.from_pretrained('distilbert-base-uncased')
@@ -668,7 +668,7 @@ class TFDistilBertForSequenceClassification(TFDistilBertPreTrainedModel):
     Examples::
 
         import tensorflow as tf
-        from transformers import BertTokenizer, TFDistilBertForSequenceClassification
+        from transformers_mrc import BertTokenizer, TFDistilBertForSequenceClassification
 
         tokenizer = DistilBertTokenizer.from_pretrained('distilbert-base-uncased')
         model = TFDistilBertForSequenceClassification.from_pretrained('distilbert-base-uncased')
@@ -721,7 +721,7 @@ class TFDistilBertForTokenClassification(TFDistilBertPreTrainedModel):
             Attentions weights after the attention softmax, used to compute the weighted average in the self-attention heads.
     Examples::
         import tensorflow as tf
-        from transformers import DistilBertTokenizer, TFDistilBertForTokenClassification
+        from transformers_mrc import DistilBertTokenizer, TFDistilBertForTokenClassification
         tokenizer = DistilBertTokenizer.from_pretrained('bert-base-uncased')
         model = TFDistilBertForTokenClassification.from_pretrained('bert-base-uncased')
         input_ids = tf.constant(tokenizer.encode("Hello, my dog is cute"))[None, :]  # Batch size 1
@@ -772,7 +772,7 @@ class TFDistilBertForQuestionAnswering(TFDistilBertPreTrainedModel):
     Examples::
 
         import tensorflow as tf
-        from transformers import BertTokenizer, TFDistilBertForQuestionAnswering
+        from transformers_mrc import BertTokenizer, TFDistilBertForQuestionAnswering
 
         tokenizer = DistilBertTokenizer.from_pretrained('distilbert-base-uncased')
         model = TFDistilBertForQuestionAnswering.from_pretrained('distilbert-base-uncased')

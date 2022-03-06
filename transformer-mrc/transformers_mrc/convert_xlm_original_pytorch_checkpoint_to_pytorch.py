@@ -23,8 +23,8 @@ from io import open
 import torch
 import numpy
 
-from transformers import CONFIG_NAME, WEIGHTS_NAME
-from transformers.tokenization_xlm import VOCAB_FILES_NAMES
+from transformers_mrc import CONFIG_NAME, WEIGHTS_NAME
+from transformers_mrc.tokenization_xlm import VOCAB_FILES_NAMES
 
 import logging
 logging.basicConfig(level=logging.INFO)

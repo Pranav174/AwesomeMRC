@@ -62,7 +62,7 @@ TF_ALL_PRETRAINED_MODEL_ARCHIVE_MAP = dict((key, value)
 
 class TFAutoModel(object):
     r"""
-        :class:`~transformers.TFAutoModel` is a generic model class
+        :class:`~transformers_mrc.TFAutoModel` is a generic model class
         that will be instantiated as one of the base model classes of the library
         when created with the `TFAutoModel.from_pretrained(pretrained_model_name_or_path)`
         class method.
@@ -95,7 +95,7 @@ class TFAutoModel(object):
         r""" Instantiates one of the base model classes of the library
         from a configuration.
 
-            config: (`optional`) instance of a class derived from :class:`~transformers.PretrainedConfig`:
+            config: (`optional`) instance of a class derived from :class:`~transformers_mrc.PretrainedConfig`:
                 The model class to instantiate is selected based on the configuration class:
                     - isInstance of `distilbert` configuration class: TFDistilBertModel (DistilBERT model)
                     - isInstance of `roberta` configuration class: TFRobertaModel (RoBERTa model)
@@ -154,7 +154,7 @@ class TFAutoModel(object):
 
                 - a string with the `shortcut name` of a pre-trained model to load from cache or download, e.g.: ``bert-base-uncased``.
                 - a string with the `identifier name` of a pre-trained model that was user-uploaded to our S3, e.g.: ``dbmdz/bert-base-german-cased``.
-                - a path to a `directory` containing model weights saved using :func:`~transformers.PreTrainedModel.save_pretrained`, e.g.: ``./my_model_directory/``.
+                - a path to a `directory` containing model weights saved using :func:`~transformers_mrc.PreTrainedModel.save_pretrained`, e.g.: ``./my_model_directory/``.
                 - a path or url to a `PyTorch, TF 1.X or TF 2.0 checkpoint file` (e.g. `./tf_model/model.ckpt.index`). In the case of a PyTorch checkpoint, ``from_pt`` should be set to True and a configuration object should be provided as ``config`` argument.
 
             from_pt: (`Optional`) Boolean
@@ -163,17 +163,17 @@ class TFAutoModel(object):
             model_args: (`optional`) Sequence of positional arguments:
                 All remaning positional arguments will be passed to the underlying model's ``__init__`` method
 
-            config: (`optional`) instance of a class derived from :class:`~transformers.PretrainedConfig`:
+            config: (`optional`) instance of a class derived from :class:`~transformers_mrc.PretrainedConfig`:
                 Configuration for the model to use instead of an automatically loaded configuation. Configuration can be automatically loaded when:
 
                 - the model is a model provided by the library (loaded with the ``shortcut-name`` string of a pretrained model), or
-                - the model was saved using :func:`~transformers.PreTrainedModel.save_pretrained` and is reloaded by suppling the save directory.
+                - the model was saved using :func:`~transformers_mrc.PreTrainedModel.save_pretrained` and is reloaded by suppling the save directory.
                 - the model is loaded by suppling a local directory as ``pretrained_model_name_or_path`` and a configuration JSON file named `config.json` is found in the directory.
 
             state_dict: (`optional`) dict:
                 an optional state dictionnary for the model to use instead of a state dictionary loaded from saved weights file.
                 This option can be used if you want to create a model from a pretrained configuration but load your own weights.
-                In this case though, you should check if using :func:`~transformers.PreTrainedModel.save_pretrained` and :func:`~transformers.PreTrainedModel.from_pretrained` is not a simpler option.
+                In this case though, you should check if using :func:`~transformers_mrc.PreTrainedModel.save_pretrained` and :func:`~transformers_mrc.PreTrainedModel.from_pretrained` is not a simpler option.
 
             cache_dir: (`optional`) string:
                 Path to a directory in which a downloaded pre-trained model
@@ -196,7 +196,7 @@ class TFAutoModel(object):
                 Can be used to update the configuration object (after it being loaded) and initiate the model. (e.g. ``output_attention=True``). Behave differently depending on whether a `config` is provided or automatically loaded:
 
                 - If a configuration is provided with ``config``, ``**kwargs`` will be directly passed to the underlying model's ``__init__`` method (we assume all relevant updates to the configuration have already been done)
-                - If a configuration is not provided, ``kwargs`` will be first passed to the configuration class initialization function (:func:`~transformers.PretrainedConfig.from_pretrained`). Each key of ``kwargs`` that corresponds to a configuration attribute will be used to override said attribute with the supplied ``kwargs`` value. Remaining keys that do not correspond to any configuration attribute will be passed to the underlying model's ``__init__`` function.
+                - If a configuration is not provided, ``kwargs`` will be first passed to the configuration class initialization function (:func:`~transformers_mrc.PretrainedConfig.from_pretrained`). Each key of ``kwargs`` that corresponds to a configuration attribute will be used to override said attribute with the supplied ``kwargs`` value. Remaining keys that do not correspond to any configuration attribute will be passed to the underlying model's ``__init__`` function.
 
         Examples::
 
@@ -239,7 +239,7 @@ class TFAutoModel(object):
 
 class TFAutoModelWithLMHead(object):
     r"""
-        :class:`~transformers.TFAutoModelWithLMHead` is a generic model class
+        :class:`~transformers_mrc.TFAutoModelWithLMHead` is a generic model class
         that will be instantiated as one of the language modeling model classes of the library
         when created with the `TFAutoModelWithLMHead.from_pretrained(pretrained_model_name_or_path)`
         class method.
@@ -272,7 +272,7 @@ class TFAutoModelWithLMHead(object):
         r""" Instantiates one of the base model classes of the library
         from a configuration.
 
-            config: (`optional`) instance of a class derived from :class:`~transformers.PretrainedConfig`:
+            config: (`optional`) instance of a class derived from :class:`~transformers_mrc.PretrainedConfig`:
                 The model class to instantiate is selected based on the configuration class:
                     - isInstance of `distilbert` configuration class: DistilBertModel (DistilBERT model)
                     - isInstance of `roberta` configuration class: RobertaModel (RoBERTa model)
@@ -335,7 +335,7 @@ class TFAutoModelWithLMHead(object):
 
                 - a string with the `shortcut name` of a pre-trained model to load from cache or download, e.g.: ``bert-base-uncased``.
                 - a string with the `identifier name` of a pre-trained model that was user-uploaded to our S3, e.g.: ``dbmdz/bert-base-german-cased``.
-                - a path to a `directory` containing model weights saved using :func:`~transformers.PreTrainedModel.save_pretrained`, e.g.: ``./my_model_directory/``.
+                - a path to a `directory` containing model weights saved using :func:`~transformers_mrc.PreTrainedModel.save_pretrained`, e.g.: ``./my_model_directory/``.
                 - a path or url to a `PyTorch, TF 1.X or TF 2.0 checkpoint file` (e.g. `./tf_model/model.ckpt.index`). In the case of a PyTorch checkpoint, ``from_pt`` should be set to True and a configuration object should be provided as ``config`` argument.
 
             from_pt: (`Optional`) Boolean
@@ -344,17 +344,17 @@ class TFAutoModelWithLMHead(object):
             model_args: (`optional`) Sequence of positional arguments:
                 All remaning positional arguments will be passed to the underlying model's ``__init__`` method
 
-            config: (`optional`) instance of a class derived from :class:`~transformers.PretrainedConfig`:
+            config: (`optional`) instance of a class derived from :class:`~transformers_mrc.PretrainedConfig`:
                 Configuration for the model to use instead of an automatically loaded configuation. Configuration can be automatically loaded when:
 
                 - the model is a model provided by the library (loaded with the ``shortcut-name`` string of a pretrained model), or
-                - the model was saved using :func:`~transformers.PreTrainedModel.save_pretrained` and is reloaded by suppling the save directory.
+                - the model was saved using :func:`~transformers_mrc.PreTrainedModel.save_pretrained` and is reloaded by suppling the save directory.
                 - the model is loaded by suppling a local directory as ``pretrained_model_name_or_path`` and a configuration JSON file named `config.json` is found in the directory.
 
             state_dict: (`optional`) dict:
                 an optional state dictionnary for the model to use instead of a state dictionary loaded from saved weights file.
                 This option can be used if you want to create a model from a pretrained configuration but load your own weights.
-                In this case though, you should check if using :func:`~transformers.PreTrainedModel.save_pretrained` and :func:`~transformers.PreTrainedModel.from_pretrained` is not a simpler option.
+                In this case though, you should check if using :func:`~transformers_mrc.PreTrainedModel.save_pretrained` and :func:`~transformers_mrc.PreTrainedModel.from_pretrained` is not a simpler option.
 
             cache_dir: (`optional`) string:
                 Path to a directory in which a downloaded pre-trained model
@@ -377,7 +377,7 @@ class TFAutoModelWithLMHead(object):
                 Can be used to update the configuration object (after it being loaded) and initiate the model. (e.g. ``output_attention=True``). Behave differently depending on whether a `config` is provided or automatically loaded:
 
                 - If a configuration is provided with ``config``, ``**kwargs`` will be directly passed to the underlying model's ``__init__`` method (we assume all relevant updates to the configuration have already been done)
-                - If a configuration is not provided, ``kwargs`` will be first passed to the configuration class initialization function (:func:`~transformers.PretrainedConfig.from_pretrained`). Each key of ``kwargs`` that corresponds to a configuration attribute will be used to override said attribute with the supplied ``kwargs`` value. Remaining keys that do not correspond to any configuration attribute will be passed to the underlying model's ``__init__`` function.
+                - If a configuration is not provided, ``kwargs`` will be first passed to the configuration class initialization function (:func:`~transformers_mrc.PretrainedConfig.from_pretrained`). Each key of ``kwargs`` that corresponds to a configuration attribute will be used to override said attribute with the supplied ``kwargs`` value. Remaining keys that do not correspond to any configuration attribute will be passed to the underlying model's ``__init__`` function.
 
         Examples::
 
@@ -420,7 +420,7 @@ class TFAutoModelWithLMHead(object):
 
 class TFAutoModelForSequenceClassification(object):
     r"""
-        :class:`~transformers.TFAutoModelForSequenceClassification` is a generic model class
+        :class:`~transformers_mrc.TFAutoModelForSequenceClassification` is a generic model class
         that will be instantiated as one of the sequence classification model classes of the library
         when created with the `TFAutoModelForSequenceClassification.from_pretrained(pretrained_model_name_or_path)`
         class method.
@@ -448,7 +448,7 @@ class TFAutoModelForSequenceClassification(object):
         r""" Instantiates one of the base model classes of the library
         from a configuration.
 
-            config: (`optional`) instance of a class derived from :class:`~transformers.PretrainedConfig`:
+            config: (`optional`) instance of a class derived from :class:`~transformers_mrc.PretrainedConfig`:
                 The model class to instantiate is selected based on the configuration class:
                     - isInstance of `distilbert` configuration class: DistilBertModel (DistilBERT model)
                     - isInstance of `roberta` configuration class: RobertaModel (RoBERTa model)
@@ -497,7 +497,7 @@ class TFAutoModelForSequenceClassification(object):
 
                 - a string with the `shortcut name` of a pre-trained model to load from cache or download, e.g.: ``bert-base-uncased``.
                 - a string with the `identifier name` of a pre-trained model that was user-uploaded to our S3, e.g.: ``dbmdz/bert-base-german-cased``.
-                - a path to a `directory` containing model weights saved using :func:`~transformers.PreTrainedModel.save_pretrained`, e.g.: ``./my_model_directory/``.
+                - a path to a `directory` containing model weights saved using :func:`~transformers_mrc.PreTrainedModel.save_pretrained`, e.g.: ``./my_model_directory/``.
                 - a path or url to a `PyTorch, TF 1.X or TF 2.0 checkpoint file` (e.g. `./tf_model/model.ckpt.index`). In the case of a PyTorch checkpoint, ``from_pt`` should be set to True and a configuration object should be provided as ``config`` argument.
 
             from_pt: (`Optional`) Boolean
@@ -506,17 +506,17 @@ class TFAutoModelForSequenceClassification(object):
             model_args: (`optional`) Sequence of positional arguments:
                 All remaning positional arguments will be passed to the underlying model's ``__init__`` method
 
-            config: (`optional`) instance of a class derived from :class:`~transformers.PretrainedConfig`:
+            config: (`optional`) instance of a class derived from :class:`~transformers_mrc.PretrainedConfig`:
                 Configuration for the model to use instead of an automatically loaded configuation. Configuration can be automatically loaded when:
 
                 - the model is a model provided by the library (loaded with the ``shortcut-name`` string of a pretrained model), or
-                - the model was saved using :func:`~transformers.PreTrainedModel.save_pretrained` and is reloaded by suppling the save directory.
+                - the model was saved using :func:`~transformers_mrc.PreTrainedModel.save_pretrained` and is reloaded by suppling the save directory.
                 - the model is loaded by suppling a local directory as ``pretrained_model_name_or_path`` and a configuration JSON file named `config.json` is found in the directory.
 
             state_dict: (`optional`) dict:
                 an optional state dictionnary for the model to use instead of a state dictionary loaded from saved weights file.
                 This option can be used if you want to create a model from a pretrained configuration but load your own weights.
-                In this case though, you should check if using :func:`~transformers.PreTrainedModel.save_pretrained` and :func:`~transformers.PreTrainedModel.from_pretrained` is not a simpler option.
+                In this case though, you should check if using :func:`~transformers_mrc.PreTrainedModel.save_pretrained` and :func:`~transformers_mrc.PreTrainedModel.from_pretrained` is not a simpler option.
 
             cache_dir: (`optional`) string:
                 Path to a directory in which a downloaded pre-trained model
@@ -539,7 +539,7 @@ class TFAutoModelForSequenceClassification(object):
                 Can be used to update the configuration object (after it being loaded) and initiate the model. (e.g. ``output_attention=True``). Behave differently depending on whether a `config` is provided or automatically loaded:
 
                 - If a configuration is provided with ``config``, ``**kwargs`` will be directly passed to the underlying model's ``__init__`` method (we assume all relevant updates to the configuration have already been done)
-                - If a configuration is not provided, ``kwargs`` will be first passed to the configuration class initialization function (:func:`~transformers.PretrainedConfig.from_pretrained`). Each key of ``kwargs`` that corresponds to a configuration attribute will be used to override said attribute with the supplied ``kwargs`` value. Remaining keys that do not correspond to any configuration attribute will be passed to the underlying model's ``__init__`` function.
+                - If a configuration is not provided, ``kwargs`` will be first passed to the configuration class initialization function (:func:`~transformers_mrc.PretrainedConfig.from_pretrained`). Each key of ``kwargs`` that corresponds to a configuration attribute will be used to override said attribute with the supplied ``kwargs`` value. Remaining keys that do not correspond to any configuration attribute will be passed to the underlying model's ``__init__`` function.
 
         Examples::
 
@@ -571,7 +571,7 @@ class TFAutoModelForSequenceClassification(object):
 
 class TFAutoModelForQuestionAnswering(object):
     r"""
-        :class:`~transformers.TFAutoModelForQuestionAnswering` is a generic model class
+        :class:`~transformers_mrc.TFAutoModelForQuestionAnswering` is a generic model class
         that will be instantiated as one of the question answering model classes of the library
         when created with the `TFAutoModelForQuestionAnswering.from_pretrained(pretrained_model_name_or_path)`
         class method.
@@ -598,7 +598,7 @@ class TFAutoModelForQuestionAnswering(object):
         r""" Instantiates one of the base model classes of the library
         from a configuration.
 
-            config: (`optional`) instance of a class derived from :class:`~transformers.PretrainedConfig`:
+            config: (`optional`) instance of a class derived from :class:`~transformers_mrc.PretrainedConfig`:
                 The model class to instantiate is selected based on the configuration class:
                     - isInstance of `distilbert` configuration class: DistilBertModel (DistilBERT model)
                     - isInstance of `bert` configuration class: BertModel (Bert model)
@@ -643,7 +643,7 @@ class TFAutoModelForQuestionAnswering(object):
 
                 - a string with the `shortcut name` of a pre-trained model to load from cache or download, e.g.: ``bert-base-uncased``.
                 - a string with the `identifier name` of a pre-trained model that was user-uploaded to our S3, e.g.: ``dbmdz/bert-base-german-cased``.
-                - a path to a `directory` containing model weights saved using :func:`~transformers.PreTrainedModel.save_pretrained`, e.g.: ``./my_model_directory/``.
+                - a path to a `directory` containing model weights saved using :func:`~transformers_mrc.PreTrainedModel.save_pretrained`, e.g.: ``./my_model_directory/``.
                 - a path or url to a `PyTorch, TF 1.X or TF 2.0 checkpoint file` (e.g. `./tf_model/model.ckpt.index`). In the case of a PyTorch checkpoint, ``from_pt`` should be set to True and a configuration object should be provided as ``config`` argument.
 
             from_pt: (`Optional`) Boolean
@@ -652,17 +652,17 @@ class TFAutoModelForQuestionAnswering(object):
             model_args: (`optional`) Sequence of positional arguments:
                 All remaning positional arguments will be passed to the underlying model's ``__init__`` method
 
-            config: (`optional`) instance of a class derived from :class:`~transformers.PretrainedConfig`:
+            config: (`optional`) instance of a class derived from :class:`~transformers_mrc.PretrainedConfig`:
                 Configuration for the model to use instead of an automatically loaded configuation. Configuration can be automatically loaded when:
 
                 - the model is a model provided by the library (loaded with the ``shortcut-name`` string of a pretrained model), or
-                - the model was saved using :func:`~transformers.PreTrainedModel.save_pretrained` and is reloaded by suppling the save directory.
+                - the model was saved using :func:`~transformers_mrc.PreTrainedModel.save_pretrained` and is reloaded by suppling the save directory.
                 - the model is loaded by suppling a local directory as ``pretrained_model_name_or_path`` and a configuration JSON file named `config.json` is found in the directory.
 
             state_dict: (`optional`) dict:
                 an optional state dictionnary for the model to use instead of a state dictionary loaded from saved weights file.
                 This option can be used if you want to create a model from a pretrained configuration but load your own weights.
-                In this case though, you should check if using :func:`~transformers.PreTrainedModel.save_pretrained` and :func:`~transformers.PreTrainedModel.from_pretrained` is not a simpler option.
+                In this case though, you should check if using :func:`~transformers_mrc.PreTrainedModel.save_pretrained` and :func:`~transformers_mrc.PreTrainedModel.from_pretrained` is not a simpler option.
 
             cache_dir: (`optional`) string:
                 Path to a directory in which a downloaded pre-trained model
@@ -685,7 +685,7 @@ class TFAutoModelForQuestionAnswering(object):
                 Can be used to update the configuration object (after it being loaded) and initiate the model. (e.g. ``output_attention=True``). Behave differently depending on whether a `config` is provided or automatically loaded:
 
                 - If a configuration is provided with ``config``, ``**kwargs`` will be directly passed to the underlying model's ``__init__`` method (we assume all relevant updates to the configuration have already been done)
-                - If a configuration is not provided, ``kwargs`` will be first passed to the configuration class initialization function (:func:`~transformers.PretrainedConfig.from_pretrained`). Each key of ``kwargs`` that corresponds to a configuration attribute will be used to override said attribute with the supplied ``kwargs`` value. Remaining keys that do not correspond to any configuration attribute will be passed to the underlying model's ``__init__`` function.
+                - If a configuration is not provided, ``kwargs`` will be first passed to the configuration class initialization function (:func:`~transformers_mrc.PretrainedConfig.from_pretrained`). Each key of ``kwargs`` that corresponds to a configuration attribute will be used to override said attribute with the supplied ``kwargs`` value. Remaining keys that do not correspond to any configuration attribute will be passed to the underlying model's ``__init__`` function.
 
         Examples::
 
@@ -722,7 +722,7 @@ class TFAutoModelForTokenClassification:
         r""" Instantiates one of the base model classes of the library
         from a configuration.
 
-            config: (`optional`) instance of a class derived from :class:`~transformers.PretrainedConfig`:
+            config: (`optional`) instance of a class derived from :class:`~transformers_mrc.PretrainedConfig`:
                 The model class to instantiate is selected based on the configuration class:
                     - isInstance of `bert` configuration class: BertModel (Bert model)
                     - isInstance of `xlnet` configuration class: XLNetModel (XLNet model)
@@ -766,23 +766,23 @@ class TFAutoModelForTokenClassification:
             pretrained_model_name_or_path: either:
 
                 - a string with the `shortcut name` of a pre-trained model to load from cache or download, e.g.: ``bert-base-uncased``.
-                - a path to a `directory` containing model weights saved using :func:`~transformers.PreTrainedModel.save_pretrained`, e.g.: ``./my_model_directory/``.
+                - a path to a `directory` containing model weights saved using :func:`~transformers_mrc.PreTrainedModel.save_pretrained`, e.g.: ``./my_model_directory/``.
                 - a path or url to a `tensorflow index checkpoint file` (e.g. `./tf_model/model.ckpt.index`). In this case, ``from_tf`` should be set to True and a configuration object should be provided as ``config`` argument. This loading path is slower than converting the TensorFlow checkpoint in a PyTorch model using the provided conversion scripts and loading the PyTorch model afterwards.
 
             model_args: (`optional`) Sequence of positional arguments:
                 All remaning positional arguments will be passed to the underlying model's ``__init__`` method
 
-            config: (`optional`) instance of a class derived from :class:`~transformers.PretrainedConfig`:
+            config: (`optional`) instance of a class derived from :class:`~transformers_mrc.PretrainedConfig`:
                 Configuration for the model to use instead of an automatically loaded configuation. Configuration can be automatically loaded when:
 
                 - the model is a model provided by the library (loaded with the ``shortcut-name`` string of a pretrained model), or
-                - the model was saved using :func:`~transformers.PreTrainedModel.save_pretrained` and is reloaded by suppling the save directory.
+                - the model was saved using :func:`~transformers_mrc.PreTrainedModel.save_pretrained` and is reloaded by suppling the save directory.
                 - the model is loaded by suppling a local directory as ``pretrained_model_name_or_path`` and a configuration JSON file named `config.json` is found in the directory.
 
             state_dict: (`optional`) dict:
                 an optional state dictionnary for the model to use instead of a state dictionary loaded from saved weights file.
                 This option can be used if you want to create a model from a pretrained configuration but load your own weights.
-                In this case though, you should check if using :func:`~transformers.PreTrainedModel.save_pretrained` and :func:`~transformers.PreTrainedModel.from_pretrained` is not a simpler option.
+                In this case though, you should check if using :func:`~transformers_mrc.PreTrainedModel.save_pretrained` and :func:`~transformers_mrc.PreTrainedModel.from_pretrained` is not a simpler option.
 
             cache_dir: (`optional`) string:
                 Path to a directory in which a downloaded pre-trained model
@@ -802,7 +802,7 @@ class TFAutoModelForTokenClassification:
                 Can be used to update the configuration object (after it being loaded) and initiate the model. (e.g. ``output_attention=True``). Behave differently depending on whether a `config` is provided or automatically loaded:
 
                 - If a configuration is provided with ``config``, ``**kwargs`` will be directly passed to the underlying model's ``__init__`` method (we assume all relevant updates to the configuration have already been done)
-                - If a configuration is not provided, ``kwargs`` will be first passed to the configuration class initialization function (:func:`~transformers.PretrainedConfig.from_pretrained`). Each key of ``kwargs`` that corresponds to a configuration attribute will be used to override said attribute with the supplied ``kwargs`` value. Remaining keys that do not correspond to any configuration attribute will be passed to the underlying model's ``__init__`` function.
+                - If a configuration is not provided, ``kwargs`` will be first passed to the configuration class initialization function (:func:`~transformers_mrc.PretrainedConfig.from_pretrained`). Each key of ``kwargs`` that corresponds to a configuration attribute will be used to override said attribute with the supplied ``kwargs`` value. Remaining keys that do not correspond to any configuration attribute will be passed to the underlying model's ``__init__`` function.
 
         Examples::
 

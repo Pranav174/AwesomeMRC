@@ -9,7 +9,7 @@ import torch
 from torch.utils.data import DataLoader, SequentialSampler
 from tqdm import tqdm
 
-from transformers import BertTokenizer
+from transformers_mrc import BertTokenizer
 
 from modeling_bertabs import BertAbs, build_predictor
 

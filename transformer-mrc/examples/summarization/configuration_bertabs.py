@@ -18,7 +18,7 @@ import json
 import logging
 import sys
 
-from transformers import PretrainedConfig
+from transformers_mrc import PretrainedConfig
 
 
 logger = logging.getLogger(__name__)

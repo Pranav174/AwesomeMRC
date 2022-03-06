@@ -18,8 +18,8 @@ import os
 import unittest
 from io import open
 
-from transformers.tokenization_bert import WordpieceTokenizer
-from transformers.tokenization_bert_japanese import (BertJapaneseTokenizer,
+from transformers_mrc.tokenization_bert import WordpieceTokenizer
+from transformers_mrc.tokenization_bert_japanese import (BertJapaneseTokenizer,
                                                      MecabTokenizer, CharacterTokenizer,
                                                      VOCAB_FILES_NAMES)
 

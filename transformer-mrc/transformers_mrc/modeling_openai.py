@@ -296,9 +296,9 @@ OPENAI_GPT_START_DOCSTRING = r"""    OpenAI GPT model was proposed in
         https://pytorch.org/docs/stable/nn.html#module
 
     Parameters:
-        config (:class:`~transformers.OpenAIGPTConfig`): Model configuration class with all the parameters of the model.
+        config (:class:`~transformers_mrc.OpenAIGPTConfig`): Model configuration class with all the parameters of the model.
             Initializing with a config file does not load the weights associated with the model, only the configuration.
-            Check out the :meth:`~transformers.PreTrainedModel.from_pretrained` method to load the model weights.
+            Check out the :meth:`~transformers_mrc.PreTrainedModel.from_pretrained` method to load the model weights.
 """
 
 OPENAI_GPT_INPUTS_DOCSTRING = r"""    Inputs:
@@ -306,9 +306,9 @@ OPENAI_GPT_INPUTS_DOCSTRING = r"""    Inputs:
             Indices of input sequence tokens in the vocabulary.
             GPT is a model with absolute position embeddings so it's usually advised to pad the inputs on
             the right rather than the left.
-            Indices can be obtained using :class:`transformers.BPT2Tokenizer`.
-            See :func:`transformers.PreTrainedTokenizer.encode` and
-            :func:`transformers.PreTrainedTokenizer.convert_tokens_to_ids` for details.
+            Indices can be obtained using :class:`transformers_mrc.BPT2Tokenizer`.
+            See :func:`transformers_mrc.PreTrainedTokenizer.encode` and
+            :func:`transformers_mrc.PreTrainedTokenizer.convert_tokens_to_ids` for details.
         **attention_mask**: (`optional`) ``torch.FloatTensor`` of shape ``(batch_size, sequence_length)``:
             Mask to avoid performing attention on padding token indices.
             Mask values selected in ``[0, 1]``:

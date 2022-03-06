@@ -17,7 +17,7 @@ from __future__ import absolute_import, division, print_function, unicode_litera
 import os
 import unittest
 
-from transformers.tokenization_xlnet import (XLNetTokenizer, SPIECE_UNDERLINE)
+from transformers_mrc.tokenization_xlnet import (XLNetTokenizer, SPIECE_UNDERLINE)
 
 from .tokenization_tests_commons import CommonTestCases
 from .utils import slow

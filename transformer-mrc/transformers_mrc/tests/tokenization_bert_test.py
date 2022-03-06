@@ -18,7 +18,7 @@ import os
 import unittest
 from io import open
 
-from transformers.tokenization_bert import (BasicTokenizer,
+from transformers_mrc.tokenization_bert import (BasicTokenizer,
                                                     BertTokenizer,
                                                     WordpieceTokenizer,
                                                     _is_control, _is_punctuation,

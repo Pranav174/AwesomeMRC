@@ -24,10 +24,10 @@ import shutil
 import numpy as np
 import torch
 
-from transformers import BertConfig, BertForMaskedLM, BertTokenizer
-from transformers import RobertaConfig, RobertaForMaskedLM, RobertaTokenizer
-from transformers import DistilBertConfig, DistilBertForMaskedLM, DistilBertTokenizer
-from transformers import GPT2Config, GPT2LMHeadModel, GPT2Tokenizer
+from transformers_mrc import BertConfig, BertForMaskedLM, BertTokenizer
+from transformers_mrc import RobertaConfig, RobertaForMaskedLM, RobertaTokenizer
+from transformers_mrc import DistilBertConfig, DistilBertForMaskedLM, DistilBertTokenizer
+from transformers_mrc import GPT2Config, GPT2LMHeadModel, GPT2Tokenizer
 
 from distiller import Distiller
 from utils import git_log, logger, init_gpu_params, set_seed

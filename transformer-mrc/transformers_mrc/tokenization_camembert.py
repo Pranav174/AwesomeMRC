@@ -21,7 +21,7 @@ import os
 from shutil import copyfile
 
 import sentencepiece as spm
-from transformers.tokenization_utils import PreTrainedTokenizer
+from transformers_mrc.tokenization_utils import PreTrainedTokenizer
 from .tokenization_xlnet import SPIECE_UNDERLINE
 
 logger = logging.getLogger(__name__)

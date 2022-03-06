@@ -19,11 +19,11 @@ from __future__ import print_function
 import unittest
 import shutil
 
-from transformers import is_tf_available
+from transformers_mrc import is_tf_available
 
 if is_tf_available():
     import tensorflow as tf
-    from transformers import (XLMConfig, TFXLMModel,
+    from transformers_mrc import (XLMConfig, TFXLMModel,
                                       TFXLMWithLMHeadModel,
                                       TFXLMForSequenceClassification,
                                       TFXLMForQuestionAnsweringSimple,

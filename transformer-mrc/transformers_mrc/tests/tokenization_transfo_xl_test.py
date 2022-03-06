@@ -18,11 +18,11 @@ import os
 import unittest
 from io import open
 
-from transformers import is_torch_available
+from transformers_mrc import is_torch_available
 
 if is_torch_available():
     import torch
-    from transformers.tokenization_transfo_xl import TransfoXLTokenizer, VOCAB_FILES_NAMES
+    from transformers_mrc.tokenization_transfo_xl import TransfoXLTokenizer, VOCAB_FILES_NAMES
 
 from .tokenization_tests_commons import CommonTestCases
 from .utils import require_torch

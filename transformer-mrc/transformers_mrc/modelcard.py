@@ -82,14 +82,14 @@ class ModelCard(object):
 
     @classmethod
     def from_pretrained(cls, pretrained_model_name_or_path, **kwargs):
-        r""" Instantiate a :class:`~transformers.ModelCard` from a pre-trained model model card.
+        r""" Instantiate a :class:`~transformers_mrc.ModelCard` from a pre-trained model model card.
 
         Parameters:
             pretrained_model_name_or_path: either:
 
                 - a string with the `shortcut name` of a pre-trained model card to load from cache or download, e.g.: ``bert-base-uncased``.
                 - a string with the `identifier name` of a pre-trained model card that was user-uploaded to our S3, e.g.: ``dbmdz/bert-base-german-cased``.
-                - a path to a `directory` containing a mode card file saved using the :func:`~transformers.ModelCard.save_pretrained` method, e.g.: ``./my_model_directory/``.
+                - a path to a `directory` containing a mode card file saved using the :func:`~transformers_mrc.ModelCard.save_pretrained` method, e.g.: ``./my_model_directory/``.
                 - a path or url to a saved model card JSON `file`, e.g.: ``./my_model_directory/modelcard.json``.
 
             cache_dir: (`optional`) string:

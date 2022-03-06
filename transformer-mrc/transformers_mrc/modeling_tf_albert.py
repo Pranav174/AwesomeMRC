@@ -513,9 +513,9 @@ ALBERT_START_DOCSTRING = r"""    The ALBERT model was proposed in
             `model({'input_ids': input_ids, 'token_type_ids': token_type_ids})`
 
     Parameters:
-        config (:class:`~transformers.AlbertConfig`): Model configuration class with all the parameters of the model. 
+        config (:class:`~transformers_mrc.AlbertConfig`): Model configuration class with all the parameters of the model. 
             Initializing with a config file does not load the weights associated with the model, only the configuration.
-            Check out the :meth:`~transformers.PreTrainedModel.from_pretrained` method to load the model weights.
+            Check out the :meth:`~transformers_mrc.PreTrainedModel.from_pretrained` method to load the model weights.
 """
 
 ALBERT_INPUTS_DOCSTRING = r"""
@@ -539,9 +539,9 @@ ALBERT_INPUTS_DOCSTRING = r"""
             Albert is a model with absolute position embeddings so it's usually advised to pad the inputs on
             the right rather than the left.
 
-            Indices can be obtained using :class:`transformers.AlbertTokenizer`.
-            See :func:`transformers.PreTrainedTokenizer.encode` and
-            :func:`transformers.PreTrainedTokenizer.convert_tokens_to_ids` for details.
+            Indices can be obtained using :class:`transformers_mrc.AlbertTokenizer`.
+            See :func:`transformers_mrc.PreTrainedTokenizer.encode` and
+            :func:`transformers_mrc.PreTrainedTokenizer.convert_tokens_to_ids` for details.
         **attention_mask**: (`optional`) ``Numpy array`` or ``tf.Tensor`` of shape ``(batch_size, sequence_length)``:
             Mask to avoid performing attention on padding token indices.
             Mask values selected in ``[0, 1]``:
@@ -585,7 +585,7 @@ class TFAlbertModel(TFAlbertPreTrainedModel):
     Examples::
 
         import tensorflow as tf
-        from transformers import AlbertTokenizer, TFAlbertModel
+        from transformers_mrc import AlbertTokenizer, TFAlbertModel
 
         tokenizer = AlbertTokenizer.from_pretrained('albert-base-v1')
         model = TFAlbertModel.from_pretrained('albert-base-v1')
@@ -710,7 +710,7 @@ class TFAlbertForMaskedLM(TFAlbertPreTrainedModel):
     Examples::
 
         import tensorflow as tf
-        from transformers import AlbertTokenizer, TFAlbertForMaskedLM
+        from transformers_mrc import AlbertTokenizer, TFAlbertForMaskedLM
 
         tokenizer = AlbertTokenizer.from_pretrained('albert-base-v2')
         model = TFAlbertForMaskedLM.from_pretrained('albert-base-v2')
@@ -762,7 +762,7 @@ class TFAlbertForSequenceClassification(TFAlbertPreTrainedModel):
     Examples::
 
         import tensorflow as tf
-        from transformers import AlbertTokenizer, TFAlbertForSequenceClassification
+        from transformers_mrc import AlbertTokenizer, TFAlbertForSequenceClassification
 
         tokenizer = AlbertTokenizer.from_pretrained('albert-base-v2')
         model = TFAlbertForSequenceClassification.from_pretrained('albert-base-v2')

@@ -52,16 +52,16 @@ except ImportError:
 class PreTrainedModel(nn.Module):
     r""" Base class for all models.
 
-        :class:`~transformers.PreTrainedModel` takes care of storing the configuration of the models and handles methods for loading/downloading/saving models
+        :class:`~transformers_mrc.PreTrainedModel` takes care of storing the configuration of the models and handles methods for loading/downloading/saving models
         as well as a few methods common to all models to (i) resize the input embeddings and (ii) prune heads in the self-attention heads.
 
         Class attributes (overridden by derived classes):
-            - ``config_class``: a class derived from :class:`~transformers.PretrainedConfig` to use as configuration class for this model architecture.
+            - ``config_class``: a class derived from :class:`~transformers_mrc.PretrainedConfig` to use as configuration class for this model architecture.
             - ``pretrained_model_archive_map``: a python ``dict`` of with `short-cut-names` (string) as keys and `url` (string) of associated pretrained weights as values.
             - ``load_tf_weights``: a python ``method`` for loading a TensorFlow checkpoint in a PyTorch model, taking as arguments:
 
-                - ``model``: an instance of the relevant subclass of :class:`~transformers.PreTrainedModel`,
-                - ``config``: an instance of the relevant subclass of :class:`~transformers.PretrainedConfig`,
+                - ``model``: an instance of the relevant subclass of :class:`~transformers_mrc.PreTrainedModel`,
+                - ``config``: an instance of the relevant subclass of :class:`~transformers_mrc.PretrainedConfig`,
                 - ``path``: a path (string) to the TensorFlow checkpoint.
 
             - ``base_model_prefix``: a string indicating the attribute associated to the base model in derived classes of the same architecture adding modules on top of the base model.
@@ -242,7 +242,7 @@ class PreTrainedModel(nn.Module):
 
     def save_pretrained(self, save_directory):
         """ Save a model and its configuration file to a directory, so that it
-            can be re-loaded using the `:func:`~transformers.PreTrainedModel.from_pretrained`` class method.
+            can be re-loaded using the `:func:`~transformers_mrc.PreTrainedModel.from_pretrained`` class method.
         """
         assert os.path.isdir(save_directory), "Saving path should be a directory where the model and configuration can be saved"
 
@@ -274,7 +274,7 @@ class PreTrainedModel(nn.Module):
 
                 - a string with the `shortcut name` of a pre-trained model to load from cache or download, e.g.: ``bert-base-uncased``.
                 - a string with the `identifier name` of a pre-trained model that was user-uploaded to our S3, e.g.: ``dbmdz/bert-base-german-cased``.
-                - a path to a `directory` containing model weights saved using :func:`~transformers.PreTrainedModel.save_pretrained`, e.g.: ``./my_model_directory/``.
+                - a path to a `directory` containing model weights saved using :func:`~transformers_mrc.PreTrainedModel.save_pretrained`, e.g.: ``./my_model_directory/``.
                 - a path or url to a `tensorflow index checkpoint file` (e.g. `./tf_model/model.ckpt.index`). In this case, ``from_tf`` should be set to True and a configuration object should be provided as ``config`` argument. This loading path is slower than converting the TensorFlow checkpoint in a PyTorch model using the provided conversion scripts and loading the PyTorch model afterwards.
                 - None if you are both providing the configuration and state dictionary (resp. with keyword arguments ``config`` and ``state_dict``)
 
@@ -282,18 +282,18 @@ class PreTrainedModel(nn.Module):
                 All remaning positional arguments will be passed to the underlying model's ``__init__`` method
 
             config: (`optional`) one of:
-                    - an instance of a class derived from :class:`~transformers.PretrainedConfig`, or
-                    - a string valid as input to :func:`~transformers.PretrainedConfig.from_pretrained()`
+                    - an instance of a class derived from :class:`~transformers_mrc.PretrainedConfig`, or
+                    - a string valid as input to :func:`~transformers_mrc.PretrainedConfig.from_pretrained()`
                 Configuration for the model to use instead of an automatically loaded configuation. Configuration can be automatically loaded when:
 
                 - the model is a model provided by the library (loaded with the ``shortcut-name`` string of a pretrained model), or
-                - the model was saved using :func:`~transformers.PreTrainedModel.save_pretrained` and is reloaded by suppling the save directory.
+                - the model was saved using :func:`~transformers_mrc.PreTrainedModel.save_pretrained` and is reloaded by suppling the save directory.
                 - the model is loaded by suppling a local directory as ``pretrained_model_name_or_path`` and a configuration JSON file named `config.json` is found in the directory.
 
             state_dict: (`optional`) dict:
                 an optional state dictionnary for the model to use instead of a state dictionary loaded from saved weights file.
                 This option can be used if you want to create a model from a pretrained configuration but load your own weights.
-                In this case though, you should check if using :func:`~transformers.PreTrainedModel.save_pretrained` and :func:`~transformers.PreTrainedModel.from_pretrained` is not a simpler option.
+                In this case though, you should check if using :func:`~transformers_mrc.PreTrainedModel.save_pretrained` and :func:`~transformers_mrc.PreTrainedModel.from_pretrained` is not a simpler option.
 
             cache_dir: (`optional`) string:
                 Path to a directory in which a downloaded pre-trained model
@@ -316,7 +316,7 @@ class PreTrainedModel(nn.Module):
                 Can be used to update the configuration object (after it being loaded) and initiate the model. (e.g. ``output_attention=True``). Behave differently depending on whether a `config` is provided or automatically loaded:
 
                 - If a configuration is provided with ``config``, ``**kwargs`` will be directly passed to the underlying model's ``__init__`` method (we assume all relevant updates to the configuration have already been done)
-                - If a configuration is not provided, ``kwargs`` will be first passed to the configuration class initialization function (:func:`~transformers.PretrainedConfig.from_pretrained`). Each key of ``kwargs`` that corresponds to a configuration attribute will be used to override said attribute with the supplied ``kwargs`` value. Remaining keys that do not correspond to any configuration attribute will be passed to the underlying model's ``__init__`` function.
+                - If a configuration is not provided, ``kwargs`` will be first passed to the configuration class initialization function (:func:`~transformers_mrc.PretrainedConfig.from_pretrained`). Each key of ``kwargs`` that corresponds to a configuration attribute will be used to override said attribute with the supplied ``kwargs`` value. Remaining keys that do not correspond to any configuration attribute will be passed to the underlying model's ``__init__`` function.
 
         Examples::
 
@@ -428,7 +428,7 @@ class PreTrainedModel(nn.Module):
             else:
                 # Load from our TensorFlow 2.0 checkpoints
                 try:
-                    from transformers import load_tf2_checkpoint_in_pytorch_model
+                    from transformers_mrc import load_tf2_checkpoint_in_pytorch_model
                     model = load_tf2_checkpoint_in_pytorch_model(model, resolved_archive_file, allow_missing_keys=True)
                 except ImportError as e:
                     logger.error("Loading a TensorFlow model in PyTorch, requires both PyTorch and TensorFlow to be installed. Please see "
@@ -631,7 +631,7 @@ class SQuADHead(nn.Module):
     r""" A SQuAD head inspired by XLNet.
 
     Parameters:
-        config (:class:`~transformers.XLNetConfig`): Model configuration class with all the parameters of the model.
+        config (:class:`~transformers_mrc.XLNetConfig`): Model configuration class with all the parameters of the model.
 
     Inputs:
         **hidden_states**: ``torch.FloatTensor`` of shape ``(batch_size, seq_len, hidden_size)``

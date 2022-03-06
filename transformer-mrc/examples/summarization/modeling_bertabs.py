@@ -27,7 +27,7 @@ import torch
 from torch import nn
 from torch.nn.init import xavier_uniform_
 
-from transformers import BertModel, BertConfig, PreTrainedModel
+from transformers_mrc import BertModel, BertConfig, PreTrainedModel
 
 from configuration_bertabs import BertAbsConfig
 
