@@ -41,8 +41,8 @@ def get_score1(args):
         all_nbest = collections.OrderedDict()
         for input_file in args.input_nbest_files.split(","):
             with open(input_file, "r") as reader:
-                input_data = json.load(reader, strict=False)
-                for (key, entries) in input_data.items():
+                nbest_data = json.load(reader, strict=False)
+                for (key, entries) in nbest_data.items():
                     if key not in all_nbest:
                         all_nbest[key] = collections.defaultdict(float)
                     for entry in entries:
@@ -88,22 +88,23 @@ def get_score1(args):
                             'question': qas['question'],
                             'id': qas['id'],
                             'answers': [ans['text'] for ans in qas['answers']],
-                            'neg_answers': [ans['text'] for ans in qas['neg_answers']]
+                            'neg_answers': [ans['text'] for ans in qas['neg_answers']] if 'neg_answers' in qas else []
                         })
 
                     del qas['answers']
-                    del qas['neg_answers']
+                    if 'neg_answers' in qas:
+                        del qas['neg_answers']
                     questions_flat[key] = qas
 
     df = pd.DataFrame(questions_flat.values())
-    df.to_csv(os.path.join(os.path.dirname(args.predict_file),'flat_predictions.csv'))
+    df.to_csv(os.path.join(os.path.dirname(args.input_nbest_files),'flat_predictions.csv'))
 
     random.shuffle(training_data)
     print(f"Training Dataset Total Questions: {len(training_data)}")
     train_size = int(len(training_data) * 0.6)
     test_size = int(len(training_data) * 0.2)
 
-    dataset_dir = os.path.join(os.path.dirname(args.predict_file), 'finetuning_data')
+    dataset_dir = os.path.join(os.path.dirname(args.input_nbest_files), 'finetuning_data')
     if not os.path.exists(dataset_dir):
         os.makedirs(dataset_dir)
 
