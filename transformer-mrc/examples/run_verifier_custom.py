@@ -70,6 +70,11 @@ def get_score1(args):
                         'answer_len': qas['answers'][0]['answer_len'],
                         'answer_start': qas['answers'][0]['answer_start']
                     })
+
+                    valid = True
+                    valid = valid and paragraph['context_len'] >= args.min_context_len if args.min_context_len else valid
+                    valid = valid and qas['answer_len'] >= args.min_answer_len if args.min_answer_len else valid
+
                     qas.update({'best_prediction': output_predictions[key]}) if args.input_nbest_files else None
                     if args.input_null_files:
                         score = 0
@@ -78,11 +83,8 @@ def get_score1(args):
                             score += input_data[idx][key]
                         score /= len(score_fields)
                         qas.update({'average_score':score})
-                    
-                    valid = True
-                    valid = valid and paragraph['context'] >= args.min_context_len if args.min_context_len else valid
-                    valid = valid and qas['answer_len'] >= args.min_answer_len if args.min_answer_len else valid
-                    valid = valid and qas['average_score'] >= args.threshold if args.threshold and args.input_null_files else valid
+                        valid = valid and qas['average_score'] >= args.threshold if args.threshold and args.input_null_files else valid
+
                     if valid:
                         training_data.append({
                             'question': qas['question'],
@@ -97,14 +99,15 @@ def get_score1(args):
                     questions_flat[key] = qas
 
     df = pd.DataFrame(questions_flat.values())
-    df.to_csv(os.path.join(os.path.dirname(args.input_nbest_files),'flat_predictions.csv'))
+    df.to_csv(os.path.join(args.output_dir,'flat_predictions.csv'))
 
     random.shuffle(training_data)
-    print(f"Training Dataset Total Questions: {len(training_data)}")
+    print(f"Original Dataset Total Questions: {len(questions_flat)}")
+    print(f"filtered Dataset Total Questions: {len(training_data)}")
     train_size = int(len(training_data) * 0.6)
     test_size = int(len(training_data) * 0.2)
 
-    dataset_dir = os.path.join(os.path.dirname(args.input_nbest_files), 'finetuning_data')
+    dataset_dir = os.path.join(args.output_dir, 'finetuning_data')
     if not os.path.exists(dataset_dir):
         os.makedirs(dataset_dir)
 
@@ -121,7 +124,7 @@ def main():
     # Required parameters
     parser.add_argument('--input_null_files', type=str, default="cls_score.json,null_odds.json")
     parser.add_argument('--input_nbest_files', type=str, default="nbest_predictions.json")
-    # parser.add_argument('--thresh', default=0, type=float)
+    parser.add_argument('--output_dir', type=str)
     parser.add_argument("--predict_file", default="data/dev.json")
     parser.add_argument("--min_context_len", type=int)
     parser.add_argument("--min_answer_len", type=int)
