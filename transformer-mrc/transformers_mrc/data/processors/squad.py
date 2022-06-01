@@ -501,7 +501,7 @@ class SquadProcessor(DataProcessor):
             input_data = json.load(reader)["data"]
         return self._create_examples(input_data, "train")
 
-    def get_dev_examples(self, data_dir, filename=None):
+    def get_dev_examples(self, data_dir, filename=None, loaded_data = False):
         """
         Returns the evaluation example from the data directory.
 
@@ -510,16 +510,19 @@ class SquadProcessor(DataProcessor):
             filename: None by default, specify this if the evaluation file has a different name than the original one
                 which is `train-v1.1.json` and `train-v2.0.json` for squad versions 1.1 and 2.0 respectively.
         """
-        if data_dir is None:
-            data_dir = ""
+        if loaded_data:
+            input_data = data_dir
+        else: 
+            if data_dir is None:
+                data_dir = ""
 
-        if self.dev_file is None:
-            raise ValueError("SquadProcessor should be instantiated via SquadV1Processor or SquadV2Processor")
+            if self.dev_file is None:
+                raise ValueError("SquadProcessor should be instantiated via SquadV1Processor or SquadV2Processor")
 
-        with open(
-            os.path.join(data_dir, self.dev_file if filename is None else filename), "r", encoding="utf-8"
-        ) as reader:
-            input_data = json.load(reader)["data"]
+            with open(
+                os.path.join(data_dir, self.dev_file if filename is None else filename), "r", encoding="utf-8"
+            ) as reader:
+                input_data = json.load(reader)["data"]
         return self._create_examples(input_data, "dev")
 
     def _create_examples(self, input_data, set_type):

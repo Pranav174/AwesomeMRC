@@ -776,7 +776,8 @@ def compute_predictions_logits(
     output_null_log_odds_file,
     verbose_logging,
     version_2_with_negative,
-    null_score_diff_threshold
+    null_score_diff_threshold,
+    return_results = False
 ):
     """Write final predictions to the json file and log-odds of null if needed."""
     logger.info("Writing predictions to: %s" % (output_prediction_file))
@@ -954,6 +955,9 @@ def compute_predictions_logits(
             else:
                 all_predictions[example.qas_id] = best_non_null_entry.text
         all_nbest_json[example.qas_id] = nbest_json
+
+    if return_results:
+        return all_predictions, all_nbest_json, scores_diff_json
 
     with open(output_prediction_file, "w") as writer:
         writer.write(json.dumps(all_predictions, indent=4) + "\n")

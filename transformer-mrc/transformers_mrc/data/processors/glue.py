@@ -583,11 +583,14 @@ class SQuADProcessor(DataProcessor):
             return self._create_examples(
                 self._read_squad(os.path.join(data_dir, "dev-v2.0.json")), "dev")
 
-    def get_test_examples(self, data_dir, answer_dir=None):
+    def get_test_examples(self, data_dir, answer_dir=None, loaded_data=False):
         """See base class."""
         if answer_dir:
             return self._create_examples(
                 self._read_squad(data_dir), "test", self._read_ans(answer_dir))
+        elif loaded_data:
+            return self._create_examples(
+                data_dir, "test")
         else:
             return self._create_examples(
                 self._read_squad(data_dir), "test")
