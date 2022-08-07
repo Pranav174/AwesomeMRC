@@ -81,9 +81,10 @@ def get_score1(args):
                         for idx, score_field in enumerate(score_fields):
                             qas.update({score_field:input_data[idx][key]})
                             score += input_data[idx][key]
+                            valid = valid and input_data[idx][key] < 0
                         score /= len(score_fields)
                         qas.update({'average_score':score})
-                        valid = valid and qas['average_score'] >= args.threshold if args.threshold and args.input_null_files else valid
+                        valid = valid and qas['average_score'] <= args.threshold if args.threshold and args.input_null_files else valid
 
                     if valid:
                         training_data.append({
