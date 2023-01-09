@@ -24,6 +24,7 @@ if is_tf_available():
 
 logger = logging.getLogger(__name__)
 
+
 def getInputs(example, tokenizer, mask_padding_with_zero, max_length, pad_token, pad_token_segment_id, pad_on_left, encode_direction="forward"):
 
     if encode_direction == "forward":
@@ -65,6 +66,7 @@ def getInputs(example, tokenizer, mask_padding_with_zero, max_length, pad_token,
 
     return input_ids, attention_mask, token_type_ids
 
+
 def glue_convert_examples_to_features(examples, tokenizer,
                                       max_length=512,
                                       task=None,
@@ -73,7 +75,7 @@ def glue_convert_examples_to_features(examples, tokenizer,
                                       pad_on_left=False,
                                       pad_token=0,
                                       pad_token_segment_id=0,
-                                      mask_padding_with_zero=True, output_feature=False, pq_end=False,max_query_length=64):
+                                      mask_padding_with_zero=True, output_feature=False, pq_end=False, max_query_length=64):
     """
     Loads a data file into a list of ``InputFeatures``
 
@@ -122,7 +124,6 @@ def glue_convert_examples_to_features(examples, tokenizer,
             example = processor.tfds_map(example)
         id_map[ex_index] = example.guid
 
-
         if pq_end:
             query = tokenizer.encode(
                 example.text_a, add_special_tokens=False, max_length=max_query_length
@@ -164,21 +165,21 @@ def glue_convert_examples_to_features(examples, tokenizer,
         else:
             raise KeyError(output_mode)
 
-        if ex_index < 5:
-            logger.info("*** Example ***")
-            logger.info("guid: %s" % (example.guid))
-            logger.info("input_ids: %s" % " ".join([str(x) for x in input_ids]))
-            logger.info("attention_mask: %s" % " ".join([str(x) for x in attention_mask]))
-            logger.info("token_type_ids: %s" % " ".join([str(x) for x in token_type_ids]))
-            logger.info("label: %s (id = %d)" % (example.label, label))
-        #obtain pa_end
+        # if ex_index < 5:
+        #     logger.info("*** Example ***")
+        #     logger.info("guid: %s" % (example.guid))
+        #     logger.info("input_ids: %s" % " ".join([str(x) for x in input_ids]))
+        #     logger.info("attention_mask: %s" % " ".join([str(x) for x in attention_mask]))
+        #     logger.info("token_type_ids: %s" % " ".join([str(x) for x in token_type_ids]))
+        #     logger.info("label: %s (id = %d)" % (example.label, label))
+        # obtain pa_end
         if pq_end:
             seq_len = attention_mask.count(1)
             text_b_len = token_type_ids.count(1)
             text_a_len = seq_len - text_b_len
             question_end_index = text_a_len - 1
             doc_end_index = seq_len - 1
-            pq_end_pos = [question_end_index,doc_end_index] #hack here, q and p are written reversely to keep consistent with the modeling
+            pq_end_pos = [question_end_index, doc_end_index]  # hack here, q and p are written reversely to keep consistent with the modeling
             features.append(
                 InputFeatures(input_ids=input_ids,
                               attention_mask=attention_mask,
@@ -193,7 +194,7 @@ def glue_convert_examples_to_features(examples, tokenizer,
                               label=label))
 
     if output_feature:
-        return features,id_map
+        return features, id_map
     return features
 
 
@@ -559,6 +560,7 @@ class WnliProcessor(DataProcessor):
                 InputExample(guid=guid, text_a=text_a, text_b=text_b, label=label))
         return examples
 
+
 class SQuADProcessor(DataProcessor):
     """Processor for the WNLI data set (GLUE version)."""
 
@@ -594,6 +596,7 @@ class SQuADProcessor(DataProcessor):
         else:
             return self._create_examples(
                 self._read_squad(data_dir), "test")
+
     def get_labels(self):
         """See base class."""
         return ["0", "1"]
@@ -636,7 +639,7 @@ glue_tasks_num_labels = {
     "qnli": 2,
     "rte": 2,
     "wnli": 2,
-    "squad":2,
+    "squad": 2,
 }
 
 glue_processors = {
@@ -650,7 +653,7 @@ glue_processors = {
     "qnli": QnliProcessor,
     "rte": RteProcessor,
     "wnli": WnliProcessor,
-    "squad":SQuADProcessor,
+    "squad": SQuADProcessor,
 }
 
 glue_output_modes = {
@@ -664,5 +667,5 @@ glue_output_modes = {
     "qnli": "classification",
     "rte": "classification",
     "wnli": "classification",
-    "squad":"classification",
+    "squad": "classification",
 }
